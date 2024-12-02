@@ -21,8 +21,22 @@ const YogaPoseCard = ({ favorites }) => {
             try {
                 const response = await axios.get(`https://yoga-api-nzy4.onrender.com/v1/poses?level=${level}`);
                 const poses = response.data;
-                const randomPose = poses[Math.floor(Math.random() * poses.length)];
-                setYogaPose(randomPose);
+
+                // Ensure the randomly selected pose matches an ID within the category
+                let randomPose;
+                let attempts = 0;
+                const maxAttempts = 10; // Prevent infinite loop
+
+                do {
+                    randomPose = poses[Math.floor(Math.random() * poses.length)];
+                    attempts++;
+                } while (!randomPose.id && attempts < maxAttempts);
+
+                if (randomPose.id) {
+                    setYogaPose(randomPose);
+                } else {
+                    console.error('No valid pose found after multiple attempts');
+                }
             } catch (error) {
                 console.error('There was an error fetching the yoga pose!', error);
             }
