@@ -16,9 +16,15 @@ const HomePage = () => {
 
     const syncCryptoData = async () => {
         try {
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                console.error('No access token found');
+                return;
+            }
+
             const response = await axios.post('http://127.0.0.1:8000/api/sync-crypto/', {}, {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+                    Authorization: `Bearer ${token}`,
                 },
             });
             console.log('Sync response data:', response.data); // Log the response data
@@ -94,7 +100,7 @@ const HomePage = () => {
             <button onClick={handleLogout}>Log Out</button>
 
             <h2>Yoga Poses</h2>
-            <YogaPoseCard />
+            <YogaPoseCard favorites={favorites} /> {/* Pass favorites to YogaPoseCard */}
             <h2>Top 10 Cryptocurrencies</h2>
             <ul>
                 {cryptos.map((crypto) => (

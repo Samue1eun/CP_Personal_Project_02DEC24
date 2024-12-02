@@ -1,28 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
-const YogaPoseCard = () => {
+const YogaPoseCard = ({ favorites }) => {
     const [yogaPose, setYogaPose] = useState(null);
-    const [favorites, setFavorites] = useState([]);
-
-    const url = `https://yoga-api-nzy4.onrender.com/v1/poses?id=5`;
-    const numberRandomizer = Math.floor(Math.random() * 10) + 1;
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchYogaPose = async () => {
+            const cumulativeChange = calculateCumulativeChange(favorites);
+
+            let level;
+            if (cumulativeChange > 2) {
+                level = 'expert';
+            } else if (cumulativeChange < -2) {
+                level = 'beginner';
+            } else {
+                level = 'intermediate';
+            }
+
             try {
-                const result = await axios.get(url);
-                if (result.data && typeof result.data === 'object') {
-                    setYogaPose(result.data);
-                } else {
-                    console.error("Unexpected response format:", result.data);
-                }
+                const response = await axios.get(`https://yoga-api-nzy4.onrender.com/v1/poses?level=${level}`);
+                const poses = response.data;
+                const randomPose = poses[Math.floor(Math.random() * poses.length)];
+                setYogaPose(randomPose);
             } catch (error) {
-                console.error("Error fetching data:", error);
+                console.error('There was an error fetching the yoga pose!', error);
             }
         };
-        fetchData();
-    }, []);
+
+        fetchYogaPose();
+    }, [favorites]);
+
+    const calculateCumulativeChange = (favorites) => {
+        return favorites.reduce((acc, favorite) => acc + favorite.percent_change_24h, 0);
+    };
 
     const savePose = (pose) => {
         setFavorites([...favorites, pose]);
@@ -52,6 +63,14 @@ const YogaPoseCard = () => {
             </ul>
         </>
     );
-}
+};
+
+YogaPoseCard.propTypes = {
+    favorites: PropTypes.array.isRequired,
+};
+
+YogaPoseCard.defaultProps = {
+    favorites: [],
+};
 
 export default YogaPoseCard;
