@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import YogaPoseCard from '../components/YogaPoseCard';
 
 const HomePage = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -91,6 +92,9 @@ const HomePage = () => {
         <>
             <h1>Home Page</h1>
             <button onClick={handleLogout}>Log Out</button>
+
+            <h2>Yoga Poses</h2>
+            <YogaPoseCard />
             <h2>Top 10 Cryptocurrencies</h2>
             <ul>
                 {cryptos.map((crypto) => (

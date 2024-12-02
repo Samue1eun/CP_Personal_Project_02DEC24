@@ -37,7 +37,7 @@ const YogaPoseCard = () => {
                     <p><strong>Translation:</strong> {yogaPose.translation_name}</p>
                     <p><strong>Description:</strong> {yogaPose.pose_description}</p>
                     <p><strong>Benefits:</strong> {yogaPose.pose_benefits}</p>
-                    <img src={yogaPose.url_png} alt={yogaPose.english_name} />
+                    <img src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
                     <button onClick={() => savePose(yogaPose)}>Save This Pose</button>
                 </div>
             ) : (
