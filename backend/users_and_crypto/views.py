@@ -1,7 +1,11 @@
 from rest_framework import generics, permissions
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
 from .models import CryptoCurrency, UserFavoritesCrypto
 from .serializers import CryptoCurrencySerializer, UserFavoritesCryptoSerializer, UserFavoritesCryptoCreateSerializer, UserSerializer
+from .utils import sync_crypto_data
 
 #CREATE, UPDATE, READ, DELETE for CryptoCurrency
 
@@ -49,3 +53,11 @@ class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
+
+# Sync Crypto Data
+class SyncCryptoDataView(APIView):
+    permission_classes = [IsAdminUser]
+    
+    def post(self, request, *args, **kwargs):
+        sync_crypto_data()
+        return Response({"message": "Data synced successfully!"})

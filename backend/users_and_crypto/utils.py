@@ -1,4 +1,4 @@
-from my_app.models import CryptoCurrency
+from users_and_crypto.models import CryptoCurrency
 import requests
 
 # This function will be used to fetch the data from the API
