@@ -9,6 +9,7 @@ class CryptoCurrency(models.Model):
     market_cap = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     supply = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
     rank = models.IntegerField(default=0)
+    percent_change_24h = models.DecimalField(max_digits=20, decimal_places=2, default=0.00)
 
     def __str__(self):
         return f"Name: {self.name} Symbol: {self.symbol} Price: {self.price} Market Cap: {self.market_cap} Supply: {self.supply} Rank: {self.rank}"

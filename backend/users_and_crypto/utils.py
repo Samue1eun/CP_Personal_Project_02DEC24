@@ -25,5 +25,6 @@ def sync_crypto_data():
                 "price": float(crypto["priceUsd"]),
                 "market_cap": float(crypto["marketCapUsd"]),
                 "supply": float(crypto["supply"]),
+                "percent_change_24h": float(crypto["changePercent24Hr"])
             }
         )

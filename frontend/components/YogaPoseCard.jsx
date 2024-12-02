@@ -6,6 +6,7 @@ const YogaPoseCard = () => {
     const [favorites, setFavorites] = useState([]);
 
     const url = `https://yoga-api-nzy4.onrender.com/v1/poses?id=5`;
+    const numberRandomizer = Math.floor(Math.random() * 10) + 1;
 
     useEffect(() => {
         const fetchData = async () => {

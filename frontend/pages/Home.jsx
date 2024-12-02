@@ -99,7 +99,7 @@ const HomePage = () => {
             <ul>
                 {cryptos.map((crypto) => (
                     <li key={crypto.id}>
-                        {crypto.rank}. {crypto.name} ({crypto.symbol}): ${crypto.price}
+                        {crypto.rank}. {crypto.name} ({crypto.symbol}): ${crypto.price} {crypto.percent_change_24h}%
                         <br />
                         <button onClick={() => handleAddToFavorites(crypto.id)}>Add to Favorites</button>
                     </li>
@@ -109,7 +109,7 @@ const HomePage = () => {
             <ul>
                 {favorites.map((favorite) => (
                     <li key={favorite.crypto.id}>
-                        {favorite.crypto.name} ({favorite.crypto.symbol}): ${favorite.crypto.price}
+                        {favorite.crypto.rank} {favorite.crypto.name} ({favorite.crypto.symbol}): ${favorite.crypto.price} {favorite.crypto.percent_change_24h}%
                     </li>
                 ))}
             </ul>
