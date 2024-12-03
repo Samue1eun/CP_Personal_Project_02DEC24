@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import SyncCryptoDataView, RemoveFavoriteCryptoView
+from .views import SyncCryptoDataView, RemoveFavoriteCryptoView, PostListCreateView, UserPostListView, PostDetailView
 
 urlpatterns = [
     path('cryptos/', views.CryptoCurrencyListView.as_view(), name='crypto-list'),
@@ -12,5 +12,8 @@ urlpatterns = [
     path('api/favorites/add/', views.UserFavoritesCryptoCreateView.as_view(), name='add-favorite'),
     path('api/user/favorites/', views.UserFavoriteCryptoListView.as_view(), name='user-favorite-list'),
     path('api/favorites/remove/', RemoveFavoriteCryptoView.as_view(), name='remove-favorite'),
+    path('api/posts/', PostListCreateView.as_view(), name='post-list-create,'),
+    path('api/user/posts/', UserPostListView.as_view(), name='user-post-list'),
+    path('api/posts/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('api/sync-crypto/', SyncCryptoDataView.as_view(), name='sync-crypto'),
 ]
