@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const UserPost = () => {
@@ -38,15 +37,15 @@ const UserPost = () => {
             }
 
             const response = await axios.post('http://127.0.0.1:8000/api/posts/', {
-                
+                content: content
             }, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
             });
             console.log('Post added:', response.data);
-            setContent('');
-            fetchPosts();
+            setContent(''); // Clear the input after successful submission
+            fetchPosts(); // Fetch the updated list of posts
         } catch (error) {
             console.error('There was an error adding the post!', error);
             if (error.response) {
@@ -55,12 +54,12 @@ const UserPost = () => {
         }
     };
 
-    return(
+    return (
         <>
             <h2>Current Status</h2>
             <input
                 type="text"
-                placeholder='What is on your mind?'
+                placeholder="What is on your mind?"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
             />
@@ -73,7 +72,7 @@ const UserPost = () => {
                 ))}
             </ul>
         </>
-    )
-}
+    );
+};
 
 export default UserPost;
