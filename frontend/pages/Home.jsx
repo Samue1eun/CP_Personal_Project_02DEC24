@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import YogaPoseCard from '../components/YogaPoseCard';
+import UserPost from '../components/UserPost';
 
 const HomePage = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -146,7 +147,7 @@ const HomePage = () => {
                 </nav>
             )}
             <h1>Home Page</h1>
-            <button onClick={handleLogout}>Log Out</button>
+            <UserPost />
 
             <h2>Yoga Poses</h2>
             <YogaPoseCard favorites={favorites} />
