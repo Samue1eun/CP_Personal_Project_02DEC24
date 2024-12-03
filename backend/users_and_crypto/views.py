@@ -35,6 +35,18 @@ class UserFavoritesCryptoCreateView(generics.CreateAPIView):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+class RemoveFavoriteCryptoView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def delete(self, request, crypto_id):
+        user = request.user
+        try:
+            favorite = UserFavoritesCrypto.objects.get(user=user, crypto_id=crypto_id)
+            favorite.delete()
+            return Response({"status": "success", "message": "Favorite removed successfully!"})
+        except UserFavoritesCrypto.DoesNotExist:
+            return Response({"status": "error", "message": "Favorite does not exist!"})
+
 # CREATE, UPDATE, READ, DELETE for User
 
 class UserListCreateView(generics.ListCreateAPIView):

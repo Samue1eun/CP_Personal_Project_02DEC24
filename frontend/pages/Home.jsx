@@ -30,6 +30,9 @@ const HomePage = () => {
             console.log('Sync response data:', response.data); // Log the response data
         } catch (error) {
             console.error('There was an error syncing the crypto data!', error);
+            if (error.response) {
+                console.error('Error response data:', error.response.data); // Log the error response data
+            }
         }
     };
 
@@ -47,9 +50,15 @@ const HomePage = () => {
 
     const fetchFavorites = async () => {
         try {
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                console.error('No access token found');
+                return;
+            }
+
             const response = await axios.get('http://127.0.0.1:8000/api/user/favorites/', {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+                    Authorization: `Bearer ${token}`,
                 },
             });
             console.log('Favorites response data:', response.data); // Log the response data
@@ -94,13 +103,38 @@ const HomePage = () => {
         }
     };
 
+    const handleRemoveFromFavorites = async (cryptoId) => {
+        try {
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                console.error('No access token found');
+                return;
+            }
+
+            const response = await axios.delete(`http://127.0.0.1:8000/api/favorites/remove/${cryptoId}/`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            console.log('Removed from favorites:', response.data);
+
+            // Update the favorites state directly
+            setFavorites(favorites.filter(favorite => favorite.crypto.id !== cryptoId));
+        } catch (error) {
+            console.error('There was an error removing from favorites!', error);
+            if (error.response) {
+                console.error('Error response data:', error.response.data); // Log the error response data
+            }
+        }
+    };
+
     return (
         <>
             <h1>Home Page</h1>
             <button onClick={handleLogout}>Log Out</button>
 
             <h2>Yoga Poses</h2>
-            <YogaPoseCard favorites={favorites} /> {/* Pass favorites to YogaPoseCard */}
+            <YogaPoseCard favorites={favorites} />
             <h2>Top 10 Cryptocurrencies</h2>
             <ul>
                 {cryptos.map((crypto) => (
@@ -116,6 +150,8 @@ const HomePage = () => {
                 {favorites.map((favorite) => (
                     <li key={favorite.crypto.id}>
                         {favorite.crypto.rank} {favorite.crypto.name} ({favorite.crypto.symbol}): ${favorite.crypto.price} {favorite.crypto.percent_change_24h}%
+                        <br />
+                        <button onClick={() => handleRemoveFromFavorites(favorite.crypto.id)}>Remove from Favorites</button>
                     </li>
                 ))}
             </ul>
