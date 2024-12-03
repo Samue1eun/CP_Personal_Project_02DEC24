@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import YogaPoseCard from '../components/YogaPoseCard';
 
 const HomePage = () => {
     const [cryptos, setCryptos] = useState([]);
     const [favorites, setFavorites] = useState([]);
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         syncCryptoData();
@@ -133,6 +134,17 @@ const HomePage = () => {
 
     return (
         <>
+            {location.pathname === '/home' && (
+                <nav>
+                    <ul>
+                        <li><button onClick={() => navigate('/home')}>Home</button></li>
+                        <li><button onClick={() => navigate('/user-profile')}>My Profile</button></li>
+                        <li><button onClick={() => navigate('/yoga-favorites')}>My Favorite Yoga Poses</button></li>
+                        <li><button onClick={() => navigate('/crypto-favorites')}>My Crypto Watchlist</button></li>
+                        <li><button onClick={handleLogout}>Log Out</button></li>
+                    </ul>
+                </nav>
+            )}
             <h1>Home Page</h1>
             <button onClick={handleLogout}>Log Out</button>
 
