@@ -17,7 +17,7 @@ const LogInPage = () => {
             localStorage.setItem('access_token', response.data.access);
             localStorage.setItem('refresh_token', response.data.refresh);
             axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
-            navigate('/');  // Redirect to the homepage
+            navigate('/home');  // Redirect to the homepage
         } catch (error) {
             console.error('There was an error logging in!', error);
         }

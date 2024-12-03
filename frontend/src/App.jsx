@@ -1,10 +1,13 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import HomePage from '../pages/Home';
 import LogInPage from '../pages/LogIn';
 import RegisterPage from '../pages/Register';
 import NotFoundPage from '../pages/NotFound';
-import UsersFavorites from '../pages/UserFavorites';
+import UserProfile from '../pages/UserProfile';
+import YogaFavorites from '../pages/YogaFavorites';
+import CryptoCurrencyFavorite from '../pages/CryptoCurrencyFavorite';
 
 function App() {
 
@@ -24,10 +27,13 @@ function App() {
       </div>
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        # removed userFavoriteCard from here
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path='/login' element={<LogInPage />} />
         <Route path='/register' element={<RegisterPage />} />
-        <Route path='/favorites' element={<UsersFavorites />} />
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/user-profile' element={<UserProfile />} />
+        <Route path='/favorites' element={<YogaFavorites />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
 
