@@ -103,7 +103,7 @@ const HomePage = () => {
         }
     };
 
-    const handleRemoveFromFavorites = async (cryptoId) => {
+    const handleDeleteFavorite = async (cryptoId) => {
         try {
             const token = localStorage.getItem('access_token');
             if (!token) {
@@ -111,9 +111,12 @@ const HomePage = () => {
                 return;
             }
 
-            const response = await axios.delete(`http://127.0.0.1:8000/api/favorites/remove/${cryptoId}/`, {
+            const response = await axios.delete('http://127.0.0.1:8000/api/favorites/remove/', {
                 headers: {
                     'Authorization': `Bearer ${token}`
+                },
+                data: {
+                    crypto_id: cryptoId
                 }
             });
             console.log('Removed from favorites:', response.data);
@@ -151,7 +154,7 @@ const HomePage = () => {
                     <li key={favorite.crypto.id}>
                         {favorite.crypto.rank} {favorite.crypto.name} ({favorite.crypto.symbol}): ${favorite.crypto.price} {favorite.crypto.percent_change_24h}%
                         <br />
-                        <button onClick={() => handleRemoveFromFavorites(favorite.crypto.id)}>Remove from Favorites</button>
+                        <button onClick={() => handleDeleteFavorite(favorite.crypto.id)}>Remove from Favorites</button>
                     </li>
                 ))}
             </ul>

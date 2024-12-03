@@ -38,14 +38,17 @@ class UserFavoritesCryptoCreateView(generics.CreateAPIView):
 class RemoveFavoriteCryptoView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
-    def delete(self, request, crypto_id):
+    def delete(self, request):
         user = request.user
+        crypto_id = request.data.get('crypto_id')
+        if not crypto_id:
+            return Response({"status": "error", "message": "crypto_id is required"}, status=400)
         try:
             favorite = UserFavoritesCrypto.objects.get(user=user, crypto_id=crypto_id)
             favorite.delete()
             return Response({"status": "success", "message": "Favorite removed successfully!"})
         except UserFavoritesCrypto.DoesNotExist:
-            return Response({"status": "error", "message": "Favorite does not exist!"})
+            return Response({"status": "error", "message": "Favorite does not exist!"}, status=404)
 
 # CREATE, UPDATE, READ, DELETE for User
 
