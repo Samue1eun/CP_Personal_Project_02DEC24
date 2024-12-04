@@ -6,7 +6,7 @@ import RegisterPage from '../pages/Register';
 import NotFoundPage from '../pages/NotFound';
 import UserProfile from '../pages/UserProfile';
 import YogaFavorites from '../pages/YogaFavorites';
-import CryptoCurrencyFavorite from '../pages/CryptoCurrencyFavorite';
+import CryptoCurrencyFavorite from '../pages/UserCryptoWatchList';
 
 function App() {
   return (
