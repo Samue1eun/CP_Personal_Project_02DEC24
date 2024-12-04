@@ -65,12 +65,6 @@ const UserPost = () => {
             />
             <button onClick={handlePost}>Submit</button>
             <button onClick={() => setContent('')}>Clear</button>
-            <h2>Your Posts</h2>
-            <ul>
-                {posts.map((post) => (
-                    <li key={post.id}>{post.content}</li>
-                ))}
-            </ul>
         </>
     );
 };
