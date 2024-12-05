@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import YogaPoseCard from '../components/YogaPoseCard';
 import UserPost from '../components/UserPost';
+import GlassmorphismCard from '../components/Code Pen/Cards/Card_1/GlassmorphismCard';
+
 
 const HomePage = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -148,7 +150,7 @@ const HomePage = () => {
             )}
             <h1>Home Page</h1>
             <UserPost />
-
+            <GlassmorphismCard />
             <h2>Yoga Poses</h2>
             <YogaPoseCard favorites={favorites} />
             <h2>Top 10 Cryptocurrencies</h2>
