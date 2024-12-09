@@ -26,7 +26,7 @@ const YogaPoseHomePageCard = () => {
 
     return (
         <>
-            <div className="card"> 
+            <div className="yogacard"> 
                 <h1>Pose of the Day!</h1>
                 {yogaPose ? (
                     <div>

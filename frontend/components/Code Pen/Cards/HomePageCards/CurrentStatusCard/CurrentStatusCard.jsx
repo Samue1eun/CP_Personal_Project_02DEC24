@@ -59,6 +59,7 @@ const CurrentStatusCard = () => {
     return (
         <>
             <div class="card">
+            <h2>Current Status</h2>
             <input
                 type="text"
                 placeholder="What is on your mind?"

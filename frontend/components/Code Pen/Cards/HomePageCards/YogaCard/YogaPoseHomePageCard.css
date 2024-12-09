@@ -33,7 +33,7 @@
       center / cover no-repeat fixed;
   }
   
-  .card {
+  .yogacard {
     max-width: 300px;
     min-height: 200px;
     display: flex;
