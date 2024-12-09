@@ -3,25 +3,26 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './LoginRegisterForm.css'
 
-const LogIn = () => {
+const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/token/', {
+            const response = await axios.post('http://127.0.0.1:8000/api/user/register/', {
                 username,
+                email,
                 password,
             });
-            localStorage.setItem('access_token', response.data.access);
-            localStorage.setItem('refresh_token', response.data.refresh);
+            console.log('User registered:', response.data);
             axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
-            navigate('/home');
+            navigate('/login');
         } catch (error) {
-            console.error('There was an error logging in!', error);
+            console.error('There was an error registering the user!', error);
         }
     };
 
@@ -39,6 +40,17 @@ const LogIn = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
             />
+            <label for="email">Email</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Enter your Email.." 
+                autocomplete="off" 
+                required 
+                value = {email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
             <label for="password">Password</label>
             <input 
                 type="password" 
@@ -50,10 +62,11 @@ const LogIn = () => {
                 value = {password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <input type="submit" name="submit" value="Log In" />
+            <a class="register" href="#" onClick={() => navigate('/login')}>Go Back to Log In</a>
+            <input type="submit" name="submit" value="Register" />
         </form>
         </>
     )
 }
 
-export default LogIn;
+export default Register;

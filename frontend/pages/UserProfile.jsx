@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import UserPostList from '../components/UserPostList';
 
@@ -11,6 +12,7 @@ const UserProfile = () => {
         delete axios.defaults.headers.common['Authorization'];
         navigate('/login');
     };
+
 
     return (
         <>

@@ -50,7 +50,7 @@ const LogIn = () => {
                 value = {password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <a class="register" href="#">Register</a>
+            <a class="register" href="#" onClick={() => navigate('/register')}>Register</a>
             <input type="submit" name="submit" value="Log In" />
         </form>
         </>
