@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
+// import NavBar_1 from '../components/Code Pen/Navbar/NavBar_1';
 import UserPost from '../components/UserPost';
-import YogaPoseHomePageCard from '../components/Code Pen/Cards/Card_1/YogaCard/YogaPoseHomePageCard';
+import CurrentStatusCard from '../components/Code Pen/Cards/HomePageCards/CurrentStatusCard/CurrentStatusCard';
+import YogaPoseHomePageCard from '../components/Code Pen/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
 
 
 const HomePage = () => {
@@ -136,6 +138,7 @@ const HomePage = () => {
 
     return (
         <>
+            {/* <NavBar_1 /> */}
             {location.pathname === '/home' && (
                 <nav>
                     <ul>
@@ -148,9 +151,9 @@ const HomePage = () => {
                 </nav>
             )}
             <h1>Home Page</h1>
+            <CurrentStatusCard />
             <UserPost />
             <YogaPoseHomePageCard />
-            <h2>Yoga Poses</h2>
             <h2>Top 10 Cryptocurrencies</h2>
             <ul>
                 {cryptos.map((crypto) => (
