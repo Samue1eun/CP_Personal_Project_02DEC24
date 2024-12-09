@@ -28,7 +28,7 @@ const LogIn = () => {
     return (
         <>
         <form onSubmit={handleSubmit}>
-            <h3 id="logo">Log In</h3>
+            <h3 id="logo">Register</h3>
             <label for="username">Username</label>
             <input 
                 type="text" 
@@ -50,7 +50,6 @@ const LogIn = () => {
                 value = {password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <a class="register" href="#">Register</a>
             <input type="submit" name="submit" value="Log In" />
         </form>
         </>

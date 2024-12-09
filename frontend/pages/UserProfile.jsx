@@ -17,7 +17,7 @@ const UserProfile = () => {
             <nav>
                 <ul>
                     <li><button onClick={() => navigate('/home')}>Home</button></li>
-                    <li><button onClick={() => navigate('/user-profile')}>My Profile</button></li>
+                    <li><button onClick={() => navigate('/yoga-favorites')}>My Favorite Yoga Poses</button></li>
                     <li><button onClick={() => navigate('/crypto-favorites')}>My Crypto Watchlist</button></li>
                     <li><button onClick={handleLogout}>Log Out</button></li>
                 </ul>
