@@ -28,12 +28,35 @@ const UserPostList = () => {
         }
     };
 
+    const deletePosts = async (postId) => {
+        try {
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                console.error('No access token found');
+                return;
+            }
+
+            await axios.delete(`http://127.0.0.1:8000/api/posts/${postId}/`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            setPosts(posts.filter(post => post.id !== postId)); // Update the state to remove the deleted post
+        } catch (error) {
+            console.error('There was an error deleting the post!', error);
+        }
+    };
+
+
     return (
         <>
             <h2>Your Posts</h2>
             <ul>
                 {posts.map((post) => (
-                    <li key={post.id}>{post.content}</li>
+                    <li key={post.id}>{post.content}
+                    <br />
+                    <button onClick={() => deletePosts(post.id)}>Remove Post</button>
+                    </li>
                 ))}
             </ul>
         </>
