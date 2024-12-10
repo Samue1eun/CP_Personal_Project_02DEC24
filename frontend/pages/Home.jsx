@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import CurrentStatusCard from '../components/Code Pen/Cards/HomePageCards/CurrentStatusCard/CurrentStatusCard';
 import TopTenCryptoCard from '../components/Code Pen/Cards/HomePageCards/TopTenCryptoCard/TopTenCryptoCard';
 import YogaPoseHomePageCard from '../components/Code Pen/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
+import FavoriteCryptoCard from '../components/Code Pen/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
 
 
 const HomePage = () => {
@@ -16,7 +17,7 @@ const HomePage = () => {
     useEffect(() => {
         syncCryptoData();
         fetchData();
-        fetchFavorites();
+        // fetchFavorites();
     }, []);
 
     const syncCryptoData = async () => {
@@ -80,62 +81,6 @@ const HomePage = () => {
         navigate('/login');
     };
 
-    const handleAddToFavorites = async (cryptoId) => {
-        try {
-            const token = localStorage.getItem('access_token');
-            if (!token) {
-                console.error('No access token found');
-                return;
-            }
-
-            const response = await axios.post('http://127.0.0.1:8000/api/favorites/add/', {
-                crypto: cryptoId
-            }, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-            console.log('Added to favorites:', response.data);
-
-            // Update the favorites state directly
-            const newFavorite = cryptos.find(crypto => crypto.id === cryptoId);
-            setFavorites([...favorites, { crypto: newFavorite }]);
-        } catch (error) {
-            console.error('There was an error adding to favorites!', error);
-            if (error.response) {
-                console.error('Error response data:', error.response.data); // Log the error response data
-            }
-        }
-    };
-
-    const handleDeleteFavorite = async (cryptoId) => {
-        try {
-            const token = localStorage.getItem('access_token');
-            if (!token) {
-                console.error('No access token found');
-                return;
-            }
-
-            const response = await axios.delete('http://127.0.0.1:8000/api/favorites/remove/', {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                },
-                data: {
-                    crypto_id: cryptoId
-                }
-            });
-            console.log('Removed from favorites:', response.data);
-
-            // Update the favorites state directly
-            setFavorites(favorites.filter(favorite => favorite.crypto.id !== cryptoId));
-        } catch (error) {
-            console.error('There was an error removing from favorites!', error);
-            if (error.response) {
-                console.error('Error response data:', error.response.data); // Log the error response data
-            }
-        }
-    };
-
     return (
         <>
             {/* <NavBar_1 /> */}
@@ -150,22 +95,17 @@ const HomePage = () => {
                     </ul>
                 </nav>
             )}
-            <h1>Home Page</h1>
-            <CurrentStatusCard />
-            <br />
-            <YogaPoseHomePageCard />
-            <br />
-            <TopTenCryptoCard />
-            <h2>Your Favorite Cryptocurrencies</h2>
-            <ul>
-                {favorites.map((favorite) => (
-                    <li key={favorite.crypto.id}>
-                        {favorite.crypto.rank} {favorite.crypto.name} ({favorite.crypto.symbol}): ${favorite.crypto.price} {favorite.crypto.percent_change_24h}%
-                        <br />
-                        <button onClick={() => handleDeleteFavorite(favorite.crypto.id)}>Remove from Favorites</button>
-                    </li>
-                ))}
-            </ul>
+            <h1 className='HomePageTitle'>Home Page</h1>
+            <div className='flex-container'>
+                <CurrentStatusCard className='CurrentStatusCardHomePage'/>
+                <br />
+                <YogaPoseHomePageCard className='YogaPoseCardHomePage'/>
+                <br />
+                <TopTenCryptoCard className='TopTenCryptoCardHomePage'/>
+                <br />
+                <FavoriteCryptoCard className='FavoriteCryptoCardHomePage'/>
+            </div>
+
         </>
     );
 };
