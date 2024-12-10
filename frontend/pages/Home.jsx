@@ -6,7 +6,7 @@ import CurrentStatusCard from '../components/Code Pen/Cards/HomePageCards/Curren
 import TopTenCryptoCard from '../components/Code Pen/Cards/HomePageCards/TopTenCryptoCard/TopTenCryptoCard';
 import YogaPoseHomePageCard from '../components/Code Pen/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
 import FavoriteCryptoCard from '../components/Code Pen/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
-
+import './CSS/HomePage.css';
 
 const HomePage = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -96,14 +96,19 @@ const HomePage = () => {
                 </nav>
             )}
             <h1 className='HomePageTitle'>Home Page</h1>
-            <div className='flex-container'>
-                <CurrentStatusCard className='CurrentStatusCardHomePage'/>
-                <br />
-                <YogaPoseHomePageCard className='YogaPoseCardHomePage'/>
-                <br />
-                <TopTenCryptoCard className='TopTenCryptoCardHomePage'/>
-                <br />
-                <FavoriteCryptoCard className='FavoriteCryptoCardHomePage'/>
+            <div className='grid-container'>
+                <div className='grid-item CurrentStatusCardCSS'>
+                    <CurrentStatusCard />
+                </div>
+                <div className='grid-item YogaPoseHomePageCardCSS'>
+                    <YogaPoseHomePageCard />
+                </div>
+                <div className='grid-item TopTenCryptoCardCSS'>
+                    <TopTenCryptoCard />
+                </div>
+                <div className='grid-item FavoriteCryptoCardCSS'>
+                    <FavoriteCryptoCard />
+                </div>
             </div>
 
         </>

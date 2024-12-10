@@ -33,7 +33,7 @@
       center / cover no-repeat fixed;
   }
   
-  .yogacard {
+  .full-yoga-description-card {
     max-width: 300px;
     min-height: 200px;
     display: flex;
@@ -56,7 +56,7 @@
     color: #446;
   }
 
-  .yoga-pose-image {
+  .yoga-pose-image-full-description {
     display: block;
     margin: 0 auto;
     width: 50%;

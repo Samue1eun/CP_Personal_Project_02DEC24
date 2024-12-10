@@ -35,7 +35,8 @@ const YogaPoseHomePageCard = () => {
                         <p><strong>Translation:</strong> {yogaPose.translation_name}</p>
                         <p><strong>Description:</strong> {yogaPose.pose_description}</p>
                         <p><strong>Benefits:</strong> {yogaPose.pose_benefits}</p>
-                        <img src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
+                        <img className="yoga-pose-image" src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
+                        <button className="add-to-favorites-button">Add to Favorites</button>
                     </div>
                 ) : (
                     <p>Loading...</p>
