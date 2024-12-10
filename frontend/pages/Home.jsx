@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 // import NavBar_1 from '../components/Code Pen/Navbar/NavBar_1';
 import CurrentStatusCard from '../components/Code Pen/Cards/HomePageCards/CurrentStatusCard/CurrentStatusCard';
+import TopTenCryptoCard from '../components/Code Pen/Cards/HomePageCards/TopTenCryptoCard/TopTenCryptoCard';
 import YogaPoseHomePageCard from '../components/Code Pen/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
 
 
@@ -153,16 +154,8 @@ const HomePage = () => {
             <CurrentStatusCard />
             <br />
             <YogaPoseHomePageCard />
-            <h2>Top 10 Cryptocurrencies</h2>
-            <ul>
-                {cryptos.map((crypto) => (
-                    <li key={crypto.id}>
-                        {crypto.rank}. {crypto.name} ({crypto.symbol}): ${crypto.price} {crypto.percent_change_24h}%
-                        <br />
-                        <button onClick={() => handleAddToFavorites(crypto.id)}>Add to Favorites</button>
-                    </li>
-                ))}
-            </ul>
+            <br />
+            <TopTenCryptoCard />
             <h2>Your Favorite Cryptocurrencies</h2>
             <ul>
                 {favorites.map((favorite) => (
