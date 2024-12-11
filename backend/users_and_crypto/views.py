@@ -96,6 +96,14 @@ class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         return Post.objects.filter(user=self.request.user)
 
+class PostUdpateView(generics.UpdateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Post.objects.filter(user=self.request.user)
+
 
 # Sync Crypto Data
 class SyncCryptoDataView(APIView):

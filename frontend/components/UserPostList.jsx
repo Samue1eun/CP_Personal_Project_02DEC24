@@ -56,6 +56,7 @@ const UserPostList = () => {
                     <li key={post.id}>{post.content}
                     <br />
                     <button onClick={() => deletePosts(post.id)}>Remove Post</button>
+                    <button>Edit Post</button>
                     </li>
                 ))}
             </ul>

@@ -2,6 +2,17 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import CryptoCurrency, UserFavoritesCrypto, Post
 
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ['id', 'user', 'content', 'created_at']
+        read_only_fields = ['id', 'user', 'created_at']
+
+class PostUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ['content']
+
 class CryptoCurrencySerializer(serializers.ModelSerializer):
     class Meta:
         model = CryptoCurrency
