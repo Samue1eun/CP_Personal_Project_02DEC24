@@ -3,8 +3,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
-from .models import CryptoCurrency, UserFavoritesCrypto, Post
-from .serializers import CryptoCurrencySerializer, UserFavoritesCryptoSerializer, UserFavoritesCryptoCreateSerializer, UserSerializer, PostSerializer
+from .models import CryptoCurrency, UserFavoritesCrypto, Post, YogaPose, UserFavoriteYogaPoses
+from .serializers import CryptoCurrencySerializer, UserFavoritesCryptoSerializer, UserFavoritesCryptoCreateSerializer, UserSerializer, PostSerializer, YogaPoseSerializer, UserFavoriteYogaPosesSerializer, UserFavoriteYogaPosesCreateSerializer
 from .utils import sync_crypto_data
 
 #CREATE, UPDATE, READ, DELETE for CryptoCurrency
@@ -104,6 +104,36 @@ class PostUdpateView(generics.UpdateAPIView):
     def get_queryset(self):
         return Post.objects.filter(user=self.request.user)
 
+class YogaPoseListCreateView(generics.ListCreateAPIView):
+    queryset = YogaPose.objects.all()
+    serializer_class = YogaPoseSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+class YogaPoseDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = YogaPose.objects.all()
+    serializer_class = YogaPoseSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+class UserFavoriteYogaPosesListView(generics.ListAPIView):
+    serializer_class = UserFavoriteYogaPosesSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return UserFavoriteYogaPoses.objects.filter(user=self.request.user)
+
+class UserFavoriteYogaPosesCreateView(generics.CreateAPIView):
+    serializer_class = UserFavoriteYogaPosesCreateSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+class UserFavoriteYogaPosesDeleteView(generics.DestroyAPIView):
+    queryset = UserFavoriteYogaPoses.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return UserFavoriteYogaPoses.objects.filter(user=self.request.user)
 
 # Sync Crypto Data
 class SyncCryptoDataView(APIView):
