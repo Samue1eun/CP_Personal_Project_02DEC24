@@ -16,7 +16,7 @@
     margin-bottom: 1.5em;
   }
   
-  body {
+  /* body {
     font: 1em/1.618 Inter, sans-serif;
   
     display: flex;
@@ -31,9 +31,9 @@
     background:
       url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
       center / cover no-repeat fixed;
-  }
+  } */
   
-  .full-yoga-description-card {
+  .fullYogaDescriptionCard {
     max-width: 300px;
     min-height: 200px;
     display: flex;
@@ -51,12 +51,8 @@
     backdrop-filter: blur(15px);
   }
   
-  .card-footer {
-    font-size: 0.65em;
-    color: #446;
-  }
 
-  .yoga-pose-image-full-description {
+  .yogaPoseImageFullDescription {
     display: block;
     margin: 0 auto;
     width: 50%;
@@ -65,7 +61,7 @@
     position: center;
   }
 
-  .add-to-favorites-button {
+  .addToFavoritesButton {
     display: block;
     margin: 0 auto;
   }

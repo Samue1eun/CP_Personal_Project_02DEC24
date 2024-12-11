@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import FullYogaDescriptionCard from '../components/Code Pen/Cards/FavoriteYogaPosesCards/FullYogaDescriptionCard/FullYogaDescriptionCard.jsx';
+import FullYogaDescriptionCard from '../components/Code Pen/Cards/FavoriteYogaPosesCards/FullYogaDescriptionCard/FullYogaDescriptionCard.jsx';
 
 const YogaFavorites = () => {
     const navigate = useNavigate();
@@ -16,7 +16,6 @@ const YogaFavorites = () => {
     return (
         <>
             <nav>
-                {/* <FullYogaDescriptionCard /> */}
                 <ul>
                     <li><button onClick={() => navigate('/home')}>Home</button></li>
                     <li><button onClick={() => navigate('/user-profile')}>My Profile</button></li>
@@ -26,6 +25,7 @@ const YogaFavorites = () => {
             </nav>
 
             <h1>Your Favorite Yoga Poses</h1>
+            <FullYogaDescriptionCard />
         </>
     );
 };
