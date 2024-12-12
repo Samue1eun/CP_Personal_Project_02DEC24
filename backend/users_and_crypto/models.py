@@ -52,3 +52,11 @@ class UserFavoriteYogaPoses(models.Model):
 
     def __str__(self):
         return f"User: {self.user.username} Favorite Yoga Pose: {self.yoga_pose.english_name}"
+
+class YogaCategory(models.Model):
+    id = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
