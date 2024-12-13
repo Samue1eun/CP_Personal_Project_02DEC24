@@ -10,3 +10,7 @@ PyJWT==2.10.0
 requests==2.32.3
 sqlparse==0.5.2
 urllib3==2.2.3
+<<<<<<< HEAD
+=======
+django-cors-headers==3.14.0
+>>>>>>> 257aa01 (added in more start apps to the backend. began refactoring django.)

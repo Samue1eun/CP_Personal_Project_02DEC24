@@ -8,8 +8,11 @@ import YogaPoseHomePageCard from '../components/Code Pen/Cards/HomePageCards/Yog
 import FavoriteCryptoCard from '../components/Code Pen/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
 import './CSS/HomePage.css';
 
+<<<<<<< HEAD
 // Test
 
+=======
+>>>>>>> 257aa01 (added in more start apps to the backend. began refactoring django.)
 const HomePage = () => {
     const [cryptos, setCryptos] = useState([]);
     const [favorites, setFavorites] = useState([]);
