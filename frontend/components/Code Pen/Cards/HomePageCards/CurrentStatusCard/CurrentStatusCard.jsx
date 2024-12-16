@@ -19,7 +19,7 @@ const CurrentStatusCard = () => {
                 return;
             }
 
-            const response = await axios.get('http://127.0.0.1:8000/api/v1/posts/', {
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/posts/user/', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -38,7 +38,7 @@ const CurrentStatusCard = () => {
                 return;
             }
 
-            const response = await axios.post('http://127.0.0.1:8000/api/posts/', {
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/posts/', {
                 content: content
             }, {
                 headers: {

@@ -17,7 +17,7 @@ const UserPostList = () => {
                 return;
             }
 
-            const response = await axios.get('http://127.0.0.1:8000/api/user/posts/', {
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/user/posts/', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -36,7 +36,7 @@ const UserPostList = () => {
                 return;
             }
 
-            await axios.delete(`http://127.0.0.1:8000/api/posts/${postId}/`, {
+            await axios.delete(`http://127.0.0.1:8000/api/v1/posts/${postId}/`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
