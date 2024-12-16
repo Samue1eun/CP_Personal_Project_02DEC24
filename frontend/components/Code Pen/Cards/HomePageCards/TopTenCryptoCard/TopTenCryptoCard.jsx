@@ -5,14 +5,36 @@ import './TopTenCryptoCard.css';
 
 const TopTenCryptoCard = () => {
     const [cryptos, setCryptos] = useState([]);
+    const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
         fetchData();
+        fetchFavorites();
     }, []);
+
+    const fetchFavorites = async () => {
+        try {
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                console.error('No access token found');
+                return;
+            }
+
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/crypto/user_favorites/', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            setFavorites(response.data);
+        } catch (error) {
+            console.error('There was an error fetching the favorites!', error);
+        }
+    };
+
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/cryptos/');
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/crypto/');
             console.log('Response data:', response.data); // Log the response data
             const sortedCryptos = response.data.sort((a, b) => a.rank - b.rank);
             const top10Cryptos = sortedCryptos.slice(0, 10);
@@ -30,7 +52,7 @@ const TopTenCryptoCard = () => {
                 return;
             }
 
-            const response = await axios.post('http://127.0.0.1:8000/api/favorites/add/', {
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/crypto/user_favorites/add/', {
                 crypto: cryptoId
             }, {
                 headers: {

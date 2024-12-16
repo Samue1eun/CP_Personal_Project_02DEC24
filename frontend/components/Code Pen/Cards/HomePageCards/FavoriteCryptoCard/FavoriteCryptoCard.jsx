@@ -22,7 +22,7 @@ const FavoriteCryptoCard = () => {
                 return;
             }
 
-            const response = await axios.get('http://127.0.0.1:8000/api/user/favorites/', {
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/crypto/user_favorites/', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -44,7 +44,7 @@ const FavoriteCryptoCard = () => {
                 return;
             }
 
-            const response = await axios.delete('http://127.0.0.1:8000/api/favorites/remove/', {
+            const response = await axios.delete('http://127.0.0.1:8000/api/v1/crypto/user_favorites/remove/', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 },

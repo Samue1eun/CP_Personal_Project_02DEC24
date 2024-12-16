@@ -30,5 +30,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/v1/users/', include('users.urls')),
     path('api/v1/crypto/', include('crypto.urls')),
-    path('api/v1/posts', include('posts.urls')),
+    path('api/v1/posts/', include('posts.urls')),
+    path('api/v1/yoga/', include('yoga.urls')),
 ]
