@@ -4,9 +4,6 @@ import { useEffect, useState } from 'react';
 import './FavoriteCryptoCard.css';
 
 const FavoriteCryptoCard = () => {
-    // useEffect(() => {
-    //     fetchData();
-    // }, []);
 
     const [favorites, setFavorites] = useState([]);
 
