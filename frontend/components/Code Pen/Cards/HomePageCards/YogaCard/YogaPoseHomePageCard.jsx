@@ -10,12 +10,9 @@ const YogaPoseHomePageCard = () => {
     useEffect(() => {
         const fetchYogaPose = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/v1/yoga/');
-                const poses = response.data;
-
-                // Select a random pose
-                const randomPose = poses[Math.floor(Math.random() * poses.length)];
-                setYogaPose(randomPose);
+                const response = await axios.get('http://127.0.0.1:8000/api/v1/yoga/pose_of_the_day/');
+                console.log('Response data:', response.data); // Log the response data
+                setYogaPose(response.data); // Set the state with the fetched data
             } catch (error) {
                 console.error('There was an error fetching the yoga pose!', error);
             }
