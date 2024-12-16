@@ -10,17 +10,13 @@ const FullYogaDescriptionCard = () => {
     useEffect(() => {
         const fetchYogaPose = async () => {
             try {
-                const response = await axios.get('https://yoga-api-nzy4.onrender.com/v1/poses');
+                const response = await axios.get('http://127.0.0.1:8000/api/v1/yoga/pose_of_the_day/');
                 const poses = response.data;
-
-                // Select a random pose
-                const randomPose = poses[Math.floor(Math.random() * poses.length)];
-                setYogaPose(randomPose);
+                setYogaPose(poses);
             } catch (error) {
                 console.error('There was an error fetching the yoga pose!', error);
             }
         };
-
         fetchYogaPose();
     }, []);
 

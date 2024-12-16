@@ -17,7 +17,7 @@ const UserPostList = () => {
                 return;
             }
 
-            const response = await axios.get('http://127.0.0.1:8000/api/v1/user/posts/', {
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/posts/user/', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
