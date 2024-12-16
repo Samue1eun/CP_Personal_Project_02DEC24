@@ -29,7 +29,7 @@ const HomePage = () => {
                 return;
             }
 
-            const response = await axios.post('http://127.0.0.1:8000/api/sync-crypto/', {}, {
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/sync-crypto/', {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

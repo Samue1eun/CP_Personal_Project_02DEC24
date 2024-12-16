@@ -5,9 +5,9 @@ from .views import (
 )
 
 urlpatterns = [
-    path('cryptos/', CryptoCurrencyListView.as_view(), name='crypto-list'),
-    path('cryptos/<int:pk>/', CryptoCurrencyDetailView.as_view(), name='crypto-detail'),
-    path('crypto/user_favorites/', UserFavoriteCryptoListView.as_view(), name='user-favorites'),
-    path('crypto/user_favorites/add/', UserFavoritesCryptoCreateView.as_view(), name='user-add-favorite'),
-    path('crypto/user_favorites/remove/', RemoveFavoriteCryptoView.as_view(), name='user-remove-favorite'),
+    path('', CryptoCurrencyListView.as_view(), name='crypto-list'),
+    path('<int:pk>/', CryptoCurrencyDetailView.as_view(), name='crypto-detail'),
+    path('user_favorites/', UserFavoriteCryptoListView.as_view(), name='user-favorites'),
+    path('user_favorites/add/', UserFavoritesCryptoCreateView.as_view(), name='user-add-favorite'),
+    path('user_favorites/remove/', RemoveFavoriteCryptoView.as_view(), name='user-remove-favorite'),
 ]
