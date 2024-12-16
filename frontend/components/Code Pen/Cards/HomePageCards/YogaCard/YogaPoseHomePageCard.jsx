@@ -27,8 +27,8 @@ const YogaPoseHomePageCard = () => {
                 console.error('No access token found');
                 return;
             }
-            const response = await axios.post('http://127.0.0.1:8000/api/user/favorites/', {
-                yoga_pose_id: yogaPose.id
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/yoga/user/favorites/', {
+                yoga_pose: yogaPose.id
             }, {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -39,6 +39,7 @@ const YogaPoseHomePageCard = () => {
             console.error('There was an error adding the yoga pose to favorites!', error);
         }
     };
+
 
     // Still need to add in the backend for adding yoga poses.
     return (
