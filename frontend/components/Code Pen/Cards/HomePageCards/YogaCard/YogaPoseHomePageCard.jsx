@@ -10,7 +10,7 @@ const YogaPoseHomePageCard = () => {
     useEffect(() => {
         const fetchYogaPose = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/v1/yoga/pose_of_the_day/');
+                const response = await axios.get('http://127.0.0.1:8000/api/v1/yoga/pose-of-the-day/');
                 console.log('Response data:', response.data); // Log the response data
                 setYogaPose(response.data); // Set the state with the fetched data
             } catch (error) {
@@ -20,6 +20,7 @@ const YogaPoseHomePageCard = () => {
         fetchYogaPose();
     }, []);
 
+
     const handleAddToFavorites = async () => {
         try {
             const token = localStorage.getItem('access_token');
@@ -27,7 +28,7 @@ const YogaPoseHomePageCard = () => {
                 console.error('No access token found');
                 return;
             }
-            const response = await axios.post('http://127.0.0.1:8000/api/v1/yoga/user/favorites/add/', {
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/yoga/user_favorites/add/', {
                 yoga_pose: yogaPose.id
             }, {
                 headers: {
