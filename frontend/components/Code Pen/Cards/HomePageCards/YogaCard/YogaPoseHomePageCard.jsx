@@ -27,7 +27,7 @@ const YogaPoseHomePageCard = () => {
                 console.error('No access token found');
                 return;
             }
-            const response = await axios.post('http://127.0.0.1:8000/api/v1/yoga/user/favorites/', {
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/yoga/user/favorites/add/', {
                 yoga_pose: yogaPose.id
             }, {
                 headers: {

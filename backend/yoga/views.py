@@ -76,6 +76,7 @@ class UserFavoriteYogaPosesCreateView(generics.CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
+        print("Request data:", self.request.data)  # Add logging
         serializer.save(user=self.request.user)
 
 class UserFavoriteYogaPosesDeleteView(generics.DestroyAPIView):
