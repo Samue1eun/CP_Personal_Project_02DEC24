@@ -19,7 +19,7 @@ const FavoriteYogaPose = () => {
                 return;
             }
 
-            const response = await axios.get('http://120.0.0.1:8000/api/v1/yoga/user/favorites/', {
+            const response = await axios.get('http://120.0.0.1:8000/api/v1/yoga/user_favorites/', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

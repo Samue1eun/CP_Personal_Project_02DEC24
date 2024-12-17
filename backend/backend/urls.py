@@ -22,6 +22,7 @@ from rest_framework_simplejwt.views import(
 )
 from users.views import CreateUserView
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/register/', CreateUserView.as_view(), name='user-register'),

@@ -62,6 +62,7 @@ class YogaPoseOfTheDayView(APIView):
                 return Response({'error': "Failed to fetch data from the external API"}, status=response.status_code)
 
         return Response(yoga_pose)
+    
 # User Favorite Yoga Poses
 
 class UserFavoriteYogaPosesListView(generics.ListAPIView):
@@ -71,7 +72,8 @@ class UserFavoriteYogaPosesListView(generics.ListAPIView):
     def get_queryset(self):
         return UserFavoriteYogaPoses.objects.filter(user=self.request.user)
 
-class UserFavoriteYogaPosesCreateView(generics.CreateAPIView):
+
+class UserFavoriteYogaPosesCreateView(generics.ListCreateAPIView):
     serializer_class = UserFavoriteYogaPosesCreateSerializer
     permission_classes = [permissions.IsAuthenticated]
 

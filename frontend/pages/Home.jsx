@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 // import NavBar_1 from '../components/Code Pen/Navbar/NavBar_1';
+import NavBar from '../components/NavBar/NavBar';
 import CurrentStatusCard from '../components/Code Pen/Cards/HomePageCards/CurrentStatusCard/CurrentStatusCard';
 import TopTenCryptoCard from '../components/Code Pen/Cards/HomePageCards/TopTenCryptoCard/TopTenCryptoCard';
 import YogaPoseHomePageCard from '../components/Code Pen/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
@@ -85,7 +86,8 @@ const HomePage = () => {
     return (
         <>
             {/* <NavBar_1 /> */}
-            {location.pathname === '/home' && (
+            <NavBar />
+            {/* {location.pathname === '/home' && (
                 <nav>
                     <ul>
                         <li><button onClick={() => navigate('/home')}>Home</button></li>
@@ -95,7 +97,7 @@ const HomePage = () => {
                         <li><button onClick={handleLogout}>Log Out</button></li>
                     </ul>
                 </nav>
-            )}
+            )} */}
             <h1 className='HomePageTitle'>Home Page</h1>
             <div className='grid-container'>
                 <div className='grid-item CurrentStatusCardCSS'>
