@@ -1,114 +1,87 @@
-/* @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+.log-in-container {
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+	align-items: center;
+	max-height: 100%;
+	max-width: 100%;
 
-body {
-	margin:0;
-	font-family:arial,tahoma,sans-serif;
-	font-size:12px;
-	font-weight:normal;
-	direction:ltr;
-  background:white;
 }
 
-form {
-	margin:10% auto 0 auto;
-	padding:30px;
-	width:400px;
-	height:auto;
-	overflow:hidden;
-	background:white;
-	border-radius:10px;
+.log-in-title {
+	font-size: 50px;
+	font-weight: 600;
+	margin-bottom: 1rem;
 }
 
-form label {
-	font-size:14px;
-	color:darkgray;
-	cursor:pointer;
+.log-in-username-input {
+	font-size: 20px;
+	width: 100%; /* Set the width to 100% of the parent container */
+    max-width: 400px; /* Optional: Set a maximum width */
+    padding: 10px; /* Optional: Add padding for better appearance */
+    margin-bottom: 1rem; /* Optional: Add margin to separate from other elements */
 }
 
-form label,
-form input {
-	float:left;
-	clear:both;
+.log-in-password-input {
+	font-size: 20px;
+	width: 100%; /* Set the width to 100% of the parent container */
+	max-width: 400px; /* Optional: Set a maximum width */
+	padding: 10px; /* Optional: Add padding for better appearance */
+	margin-bottom: 1rem; /* Optional: Add margin to separate from other elements */
 }
 
-form input {
-	margin:15px 0;
-	padding:15px 10px;
-	width:100%;
-	outline:none;
-	border:1px solid #bbb;
-	border-radius:20px;
-	display:inline-block;
-	-webkit-box-sizing:border-box;
-	   -moz-box-sizing:border-box;
-	        box-sizing:border-box;
-    -webkit-transition:0.2s ease all;
-	   -moz-transition:0.2s ease all;
-	    -ms-transition:0.2s ease all;
-	     -o-transition:0.2s ease all;
-	        transition:0.2s ease all;
+.username-title {
+	font-size: 20px;
+	margin-bottom: 1rem;
 }
 
-form input[type=text]:focus,
-form input[type="password"]:focus {
-	border-color:cornflowerblue;
+.password-title {
+	font-size: 20px;
+	margin-bottom: 1rem;
 }
 
-input[type=submit] {
-	padding:15px 50px;
-	width:auto;
-	background:#1abc9c;
-	border:none;
-	color:white;
-	cursor:pointer;
-	display:inline-block;
-	float:right;
-	clear:right;
-	-webkit-transition:0.2s ease all;
-	   -moz-transition:0.2s ease all;
-	    -ms-transition:0.2s ease all;
-	     -o-transition:0.2s ease all;
-	        transition:0.2s ease all;
+.register-button {
+	font-size: 20px;
+	padding: 10px;
+	width: 100%;
+	max-width: 400px;
+	margin-bottom: 1rem;
 }
 
-input[type=submit]:hover {
-	opacity:0.8;
+.log-in-button{
+	font-size: 20px;
+	padding: 10px;
+	width: 100%;
+	max-width: 400px;
+	margin-bottom: 1rem;
 }
 
-input[type="submit"]:active {
-	opacity:0.4;
+.log-in-button-container {
+	display: flex;
+    justify-content: center;
+    gap: 10px; /* Add space between the buttons */
+    width: 100%;
+    max-width: 400px;
 }
 
-.forgot,
-.register {
-	margin:10px;
-	float:left;
-	clear:left;
-	display:inline-block;
-	color:cornflowerblue;
-	text-decoration:none;
+.register-button {
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 190px; /* Adjust width to fit within the container */
+    margin-bottom: 1rem;
 }
 
-.forgot:hover,
-.register:hover {
-	color:darkgray;
+.register-button {
+	font-size: .8rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0 1.5rem;
 }
 
-#logo {
-	margin:0 auto;
-	width:300px;
-	font-family:'Lily Script One', cursive;
-	font-size:60px;
-	font-weight:bold;
-	text-align:center;
-	color:lightgray;
-	-webkit-transition:0.2s ease all;
-	   -moz-transition:0.2s ease all;
-	    -ms-transition:0.2s ease all;
-	     -o-transition:0.2s ease all;
-	        transition:0.2s ease all;
+.log-in-button {
+	font-size: .8rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0 1.5rem;
 }
-
-#logo:hover {
-	color:cornflowerblue;
-} */

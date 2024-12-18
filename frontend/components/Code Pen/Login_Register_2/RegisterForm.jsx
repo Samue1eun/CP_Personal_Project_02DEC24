@@ -28,8 +28,9 @@ const Register = () => {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <h3 id="logo">Register</h3>
+        <div className="register-container">
+        <form className="register-form" onSubmit={handleSubmit}>
+            <h3 className="register-title">Register</h3>
             <label for="username">Username</label>
             <input 
                 type="text" 
@@ -65,6 +66,7 @@ const Register = () => {
             <a class="register" href="#" onClick={() => navigate('/login')}>Go Back to Log In</a>
             <input type="submit" name="submit" value="Register" />
         </form>
+        </div>
         </>
     )
 }

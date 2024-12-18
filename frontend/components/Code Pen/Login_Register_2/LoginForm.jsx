@@ -27,22 +27,23 @@ const LogIn = () => {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <h3 id="logo">Log In</h3>
-            <label for="username">Username</label>
+        <div className="log-in-container">
+        <form className="log-in-form" onSubmit={handleSubmit}>
+            <h3 className ="log-in-title">Log In</h3>
+            <label className ="username-title" for="username">Username</label>
             <input 
                 type="text" 
-                id="username" 
+                class="log-in-username-input" 
                 placeholder="Type in your username.." 
                 autocomplete="off" 
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
             />
-            <label for="password">Password</label>
+            <label className="password-title" for="password">Password</label>
             <input 
                 type="password" 
-                id="password" 
+                class="log-in-password-input" 
                 name="password" 
                 placeholder="Enter your password.." 
                 autocomplete="off" 
@@ -50,9 +51,12 @@ const LogIn = () => {
                 value = {password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <a class="register" href="#" onClick={() => navigate('/register')}>Register</a>
-            <input type="submit" name="submit" value="Log In" />
+            <div className="log-in-button-container">
+                <button class="register-button button-clear" onClick={() => navigate('/register')}>Register</button>
+                <button type="submit" class="log-in-button button-outline">Log In</button>
+            </div>
         </form>
+        </div>
         </>
     )
 }
