@@ -82,7 +82,7 @@ const FavoriteCryptoCard = () => {
                                 <td className="favorite-crypto-row-description">{favorite.crypto.symbol}</td>
                                 <td className="favorite-crypto-row-description">{favorite.crypto.price}</td>
                                 <td className="favorite-crypto-row-description">{favorite.crypto.percent_change_24h}</td>
-                                <button class="crypto-add-to-favorites-button button-clear">
+                                <button class="crypto-delete-button button-clear" onClick={() => handleDeleteFavorite(favorite.crypto.id)}>
                                     Delete from Favorites
                                 </button>
                             </tr>

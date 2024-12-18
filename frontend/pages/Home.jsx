@@ -90,16 +90,16 @@ const HomePage = () => {
             <NavBar />
             <h1 className='HomePageTitle'>Home Page</h1>
             <div className='grid-container'>
-                <div className='grid-item CurrentStatusCardCSS'>
+                <div className='grid-item current-status-card-grid-container'>
                     <CurrentStatusCard />
                 </div>
-                <div className='grid-item YogaPoseHomePageCardCSS'>
+                <div className='grid-item yoga-pose-home-card-grid-container'>
                     <YogaPoseHomePageCard />
                 </div>
-                <div className='grid-item TopTenCryptoCardCSS'>
+                <div className='grid-item top-ten-crypto-card-grid-container'>
                     <TopTenCryptoCard />
                 </div>
-                <div className='grid-item FavoriteCryptoCardCSS'>
+                <div className='grid-item favorite-crypto-card-grid-container'>
                     <FavoriteCryptoCard />
                 </div>
             </div>
