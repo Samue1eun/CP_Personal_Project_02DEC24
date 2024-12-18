@@ -17,7 +17,7 @@
     margin-bottom: 20px;
 }
 
-.fullYogaDescriptionCard img {
+.yogaPoseImage {
     max-width: 100%; /* Ensure the image takes the full width of the parent */
     height: auto; /* Maintain the aspect ratio */
     display: block; /* Remove any inline spacing */

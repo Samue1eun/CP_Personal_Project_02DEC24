@@ -1,6 +1,6 @@
 .HomePageTitle {
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 20px;
 }
 
@@ -34,8 +34,8 @@
     grid-row: 9/10;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 600px) {
+Media query for smaller screens */
+/* @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;

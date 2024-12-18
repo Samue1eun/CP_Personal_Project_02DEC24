@@ -7,6 +7,7 @@ import CurrentStatusCard from '../components/Cards/HomePageCards/CurrentStatusCa
 import TopTenCryptoCard from '../components/Cards/HomePageCards/TopTenCryptoCard/TopTenCryptoCard';
 import YogaPoseHomePageCard from '../components/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
 import FavoriteCryptoCard from '../components/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
+import './CSS/HomePage.css';
 
 
 
