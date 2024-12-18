@@ -94,7 +94,7 @@ const TopTenCryptoCard = () => {
                         <td className="top-ten-crypto-row-description">{crypto.symbol}</td>
                         <td className="top-ten-crypto-row-description">${crypto.price}</td>
                         <td className="top-ten-crypto-row-description">{crypto.percent_change_24h}%</td>
-                            <button class='button button-clear' onClick={() => handleAddToFavorites(crypto.id)}>
+                            <button class="crypto-add-to-favorites-button button-clear crypto-add-to-favorites-button" onClick={() => handleAddToFavorites(crypto.id)}>
                                 Add to Favorites
                             </button>
                         </tr>

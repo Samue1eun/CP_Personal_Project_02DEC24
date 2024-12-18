@@ -1,5 +1,5 @@
 .top-ten-crypto-card-container {
-    max-width: 600px; /* Set the maximum width */
+    max-width: 800px; /* Set the maximum width */
     width: 100%; /* Ensure it takes the full width of the parent */
     padding: 35px;
     border: 1px solid rgba(255, 255, 255, .25);
@@ -23,4 +23,11 @@
 
 .top-ten-crypto-row-description {
     font-size: 15px;
+}
+
+.crypto-add-to-favorites-button {
+    font-size: 12px;
+    height: 10px;
+    line-height: 10px;
+    padding: 0 15px;
 }
