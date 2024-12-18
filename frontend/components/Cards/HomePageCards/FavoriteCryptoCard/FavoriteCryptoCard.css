@@ -1,4 +1,4 @@
-.top-ten-crypto-card-container {
+.favorite-crypto-card-container {
     max-width: 800px; /* Set the maximum width */
     width: 100%; /* Ensure it takes the full width of the parent */
     padding: 35px;
@@ -9,13 +9,13 @@
     backdrop-filter: blur(15px);
 }
 
-.top-ten-crypto-card-title {
+.favorite-crypto-card-title {
     text-align: center;
     font-size: 30px;
     margin-bottom: 20px;
 }
 
-.top-ten-crypto-table {
+.favorite-crypto-table {
     width: 100%; /* Adjust the width of the table */
     max-width: 800px; /* Set a maximum width for the table */
     margin: 0 auto; /* Center the table horizontally */
@@ -24,13 +24,13 @@
     margin-top: 20px;
 }
 
-.top-ten-crypto-header-title {
+.favorite-crypto-header-title {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.top-ten-crypto-row-description {
+.favorite-crypto-row-description {
     font-size: 15px;
 }
 

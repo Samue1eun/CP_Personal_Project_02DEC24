@@ -76,7 +76,7 @@ const TopTenCryptoCard = () => {
         <>
         <div className="top-ten-crypto-card-container">
             <h2 className="top-ten-crypto-card-title"><strong>Top 10 Cryptocurrencies</strong></h2>
-            <table>
+            <table className="top-ten-crypto-table">
                 <thead>
                     <tr>
                         <th className="top-ten-crypto-header-title">Rank</th>
@@ -94,9 +94,9 @@ const TopTenCryptoCard = () => {
                         <td className="top-ten-crypto-row-description">{crypto.symbol}</td>
                         <td className="top-ten-crypto-row-description">${crypto.price}</td>
                         <td className="top-ten-crypto-row-description">{crypto.percent_change_24h}%</td>
-                            <button class="crypto-add-to-favorites-button button-clear crypto-add-to-favorites-button" onClick={() => handleAddToFavorites(crypto.id)}>
-                                Add to Favorites
-                            </button>
+                        <button class="crypto-add-to-favorites-button button-clear crypto-add-to-favorites-button" onClick={() => handleAddToFavorites(crypto.id)}>
+                            Add to Favorites
+                        </button>
                         </tr>
                     ))}
                 </tbody>

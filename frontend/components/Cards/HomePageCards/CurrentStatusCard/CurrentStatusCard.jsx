@@ -69,8 +69,8 @@ const CurrentStatusCard = () => {
             />
             <br />
             <div className="button-container">
-                <button className="status-button" onClick={handlePost}>Submit</button>
-                <button className="status-button" onClick={() => setContent('')}>Clear</button>
+                <button class="status-button button-outline" onClick={handlePost}>Submit</button>
+                <button class="status-button button-outline" onClick={() => setContent('')}>Clear</button>
             </div>
 
             </div>

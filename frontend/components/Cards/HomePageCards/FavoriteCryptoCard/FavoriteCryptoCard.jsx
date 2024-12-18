@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import './FavoriteCryptoCard.css';
 
 const FavoriteCryptoCard = () => {
 
@@ -62,15 +63,32 @@ const FavoriteCryptoCard = () => {
 
     return (
         <>
-            <div className="favoriteCryptoCard">
-                <h2>Favorite Cryptocurriences</h2>
-                {favorites.map((favorite) => (
-                    <li key={favorite.crypto.id}>
-                        {favorite.crypto.rank} {favorite.crypto.name} ({favorite.crypto.symbol}): ${favorite.crypto.price} {favorite.crypto.percent_change_24h}%
-                        <br />
-                        <button onClick={() => handleDeleteFavorite(favorite.crypto.id)}>Remove from Favorites</button>
-                    </li>
-                ))}
+            <div className="favorite-crypto-card-container">
+                <h2 className="favorite-crypto-card-title"><strong>Favorite Cryptocurriences</strong></h2>
+                <table className="favorite-crypto-table">
+                    <thead>
+                        <tr>
+                            <th className="favorite-crypto-header-title">Name</th>
+                            <th className="favorite-crypto-header-title">Symbol</th>
+                            <th className="favorite-crypto-header-title">Price</th>
+                            <th className="favorite-crypto-header-title">Change(24)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {favorites.map((favorite) => (
+                            <tr key={favorite.crypto.id}>
+                                <td className="favorite-crypto-row-description">{favorite.crypto.name}</td>
+                                <td className="favorite-crypto-row-description">{favorite.crypto.symbol}</td>
+                                <td className="favorite-crypto-row-description">{favorite.crypto.price}</td>
+                                <td className="favorite-crypto-row-description">{favorite.crypto.percent_change_24h}</td>
+                                <button class="crypto-add-to-favorites-button button-clear">
+                                    Delete from Favorites
+                                </button>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </>
     )
