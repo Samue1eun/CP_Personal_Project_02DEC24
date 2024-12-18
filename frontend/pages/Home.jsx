@@ -8,6 +8,7 @@ import TopTenCryptoCard from '../components/Cards/HomePageCards/TopTenCryptoCard
 import YogaPoseHomePageCard from '../components/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
 import FavoriteCryptoCard from '../components/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
 import './CSS/HomePage.css';
+import 'milligram/dist/milligram.min.css';
 
 
 

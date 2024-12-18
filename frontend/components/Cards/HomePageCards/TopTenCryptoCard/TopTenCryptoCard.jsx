@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import 'milligram/dist/milligram.min.css';
+import './TopTenCryptoCard.css';
 
 const TopTenCryptoCard = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -74,36 +74,33 @@ const TopTenCryptoCard = () => {
     
     return (
         <>
-        <div>
-            <h2>Top 10 Cryptocurrencies</h2>
+        <div className="top-ten-crypto-card-container">
+            <h2 className="top-ten-crypto-card-title"><strong>Top 10 Cryptocurrencies</strong></h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Rank</th>
-                        <th>Name</th>
-                        <th>Symbol</th>
-                        <th>Price</th>
-                        <th>Change (24h)</th>
+                        <th className="top-ten-crypto-header-title">Rank</th>
+                        <th className="top-ten-crypto-header-title">Name</th>
+                        <th className="top-ten-crypto-header-title">Symbol</th>
+                        <th className="top-ten-crypto-header-title">Price</th>
+                        <th className="top-ten-crypto-header-title">Change (24h)</th>
                     </tr>
                 </thead>
                 <tbody>
                     {cryptos.map((crypto) => (
-                    <tr key={crypto.id}>
-                        <td>{crypto.rank}</td>
-                        <td>{crypto.name}</td>
-                        <td>{crypto.symbol}</td>
-                        <td>${crypto.price}</td>
-                        <td>{crypto.percent_change_24h}%</td>
-                        <td>
-                                <button onClick={() => handleAddToFavorites(crypto.id)}>
-                                    Add to Favorites
-                                </button>
-                        </td>
-                    </tr>
+                        <tr key={crypto.id} className="top-ten-crypto-rows">
+                        <td className="top-ten-crypto-row-description">{crypto.rank}</td>
+                        <td className="top-ten-crypto-row-description">{crypto.name}</td>
+                        <td className="top-ten-crypto-row-description">{crypto.symbol}</td>
+                        <td className="top-ten-crypto-row-description">${crypto.price}</td>
+                        <td className="top-ten-crypto-row-description">{crypto.percent_change_24h}%</td>
+                            <button class='button button-clear' onClick={() => handleAddToFavorites(crypto.id)}>
+                                Add to Favorites
+                            </button>
+                        </tr>
                     ))}
                 </tbody>
             </table>
-            <button>Outlined Button</button>
         </div>
         </>
     )

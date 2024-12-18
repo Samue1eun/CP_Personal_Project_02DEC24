@@ -18,7 +18,7 @@ const NavBar = () => {
         {location.pathname === '/home' && (
         <div className="nav-bar-container">
             <nav>
-                <button class="button button-clear" onClick={() => navigate('/user-profile')}>
+                <button class="button button-clear button-my-profile" onClick={() => navigate('/user-profile')}>
                     My Profile
                 </button>
                 <button class="button button-clear" onClick={() => navigate('/yoga-favorites')}>
