@@ -59,15 +59,20 @@ const CurrentStatusCard = () => {
     return (
         <>
             <div className="currentstatuscard">
-            <h2>Current Status</h2>
+            <h2>Current Thoughts</h2>
             <input
+                className="current-status-input"
                 type="text"
                 placeholder="What is on your mind?"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
             />
-            <button onClick={handlePost}>Submit</button>
-            <button onClick={() => setContent('')}>Clear</button>
+            <br />
+            <div className="button-container">
+                <button className="status-button" onClick={handlePost}>Submit</button>
+                <button className="status-button" onClick={() => setContent('')}>Clear</button>
+            </div>
+
             </div>
         </>
     )
