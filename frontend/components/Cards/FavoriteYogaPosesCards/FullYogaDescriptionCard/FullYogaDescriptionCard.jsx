@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import styles from './FullYogaDescriptionCard.module.css';
+import './FullYogaDescriptionCard.css';
 
 const FullYogaDescriptionCard = () => {
     const [yogaPose, setYogaPose] = useState(null);
@@ -38,16 +38,16 @@ const FullYogaDescriptionCard = () => {
     };
 
     return (
-        <div className={styles.fullYogaDescriptionCard}>
-            <h1>Pose of the Day!</h1>
+        <div className='fullYogaDescriptionCard'>
+            <h1 className='fullYogaDescriptionCardTitle'>Pose of the Day!</h1>
             {yogaPose ? (
                 <div>
-                    <h3>{yogaPose.english_name}</h3>
-                    <p>Sanskrit Name: {yogaPose.sanskrit_name}</p>
-                    <p>Translation: {yogaPose.translation_name}</p>
-                    <p>Description: {yogaPose.pose_description}</p>
-                    <p>Benefits: {yogaPose.pose_benefits}</p>
-                    <img src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
+                    <h3 className='yogaPose'>{yogaPose.english_name}</h3>
+                    <p className='yogaPoseDescription'>Sanskrit Name: {yogaPose.sanskrit_name}</p>
+                    <p className='yogaPoseDescription'>Translation: {yogaPose.translation_name}</p>
+                    <p className='yogaPoseDescription'>Description: {yogaPose.pose_description}</p>
+                    <p className='yogaPoseDescription'>Benefits: {yogaPose.pose_benefits}</p>
+                    <img className='yogaPoseImage' src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
                     <button onClick={handleAddToFavorites}>Add to Favorites</button>
                 </div>
             ) : (

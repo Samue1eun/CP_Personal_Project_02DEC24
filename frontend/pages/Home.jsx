@@ -3,11 +3,11 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 // import NavBar_1 from '../components/Code Pen/Navbar/NavBar_1';
 import NavBar from '../components/NavBar/NavBar';
-import CurrentStatusCard from '../components/Code Pen/Cards/HomePageCards/CurrentStatusCard/CurrentStatusCard';
-import TopTenCryptoCard from '../components/Code Pen/Cards/HomePageCards/TopTenCryptoCard/TopTenCryptoCard';
-import YogaPoseHomePageCard from '../components/Code Pen/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
-import FavoriteCryptoCard from '../components/Code Pen/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
-import './CSS/HomePage.css';
+import CurrentStatusCard from '../components/Cards/HomePageCards/CurrentStatusCard/CurrentStatusCard';
+import TopTenCryptoCard from '../components/Cards/HomePageCards/TopTenCryptoCard/TopTenCryptoCard';
+import YogaPoseHomePageCard from '../components/Cards/HomePageCards/YogaCard/YogaPoseHomePageCard';
+import FavoriteCryptoCard from '../components/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
+
 
 
 const HomePage = () => {
@@ -46,7 +46,7 @@ const HomePage = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/cryptos/');
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/crypto/');
             console.log('Response data:', response.data); // Log the response data
             const sortedCryptos = response.data.sort((a, b) => a.rank - b.rank);
             const top10Cryptos = sortedCryptos.slice(0, 10);
@@ -85,19 +85,7 @@ const HomePage = () => {
 
     return (
         <>
-            {/* <NavBar_1 /> */}
             <NavBar />
-            {/* {location.pathname === '/home' && (
-                <nav>
-                    <ul>
-                        <li><button onClick={() => navigate('/home')}>Home</button></li>
-                        <li><button onClick={() => navigate('/user-profile')}>My Profile</button></li>
-                        <li><button onClick={() => navigate('/yoga-favorites')}>My Favorite Yoga Poses</button></li>
-                        <li><button onClick={() => navigate('/crypto-favorites')}>My Crypto Watchlist</button></li>
-                        <li><button onClick={handleLogout}>Log Out</button></li>
-                    </ul>
-                </nav>
-            )} */}
             <h1 className='HomePageTitle'>Home Page</h1>
             <div className='grid-container'>
                 <div className='grid-item CurrentStatusCardCSS'>

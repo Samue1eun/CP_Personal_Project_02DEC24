@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import FullYogaDescriptionCard from '../components/Code Pen/Cards/FavoriteYogaPosesCards/FullYogaDescriptionCard/FullYogaDescriptionCard.jsx';
+import FullYogaDescriptionCard from '../components/Cards/FavoriteYogaPosesCards/FullYogaDescriptionCard/FullYogaDescriptionCard.jsx';
 import FavoriteYogaPose from '../components/FavoriteYogaPoseComponents/FavoriteYogaPoseCard/FavoriteYogaPose.jsx';
 
 const YogaFavorites = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import './TopTenCryptoCard.css';
+import 'milligram/dist/milligram.min.css';
 
 const TopTenCryptoCard = () => {
     const [cryptos, setCryptos] = useState([]);
@@ -74,17 +74,36 @@ const TopTenCryptoCard = () => {
     
     return (
         <>
-        <div class="topTenCryptoCard">
-        <h2>Top 10 Cryptocurrencies</h2>
-        <ul>
-            {cryptos.map((crypto) => (
-            <li key={crypto.id}>
-            {crypto.rank}. {crypto.name} ({crypto.symbol}): ${crypto.price} {crypto.percent_change_24h}%
-            <br />
-            <button onClick={() => handleAddToFavorites(crypto.id)}>Add to Favorites</button>
-            </li>
-            ))}
-        </ul>
+        <div>
+            <h2>Top 10 Cryptocurrencies</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Symbol</th>
+                        <th>Price</th>
+                        <th>Change (24h)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cryptos.map((crypto) => (
+                    <tr key={crypto.id}>
+                        <td>{crypto.rank}</td>
+                        <td>{crypto.name}</td>
+                        <td>{crypto.symbol}</td>
+                        <td>${crypto.price}</td>
+                        <td>{crypto.percent_change_24h}%</td>
+                        <td>
+                                <button onClick={() => handleAddToFavorites(crypto.id)}>
+                                    Add to Favorites
+                                </button>
+                        </td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
+            <button>Outlined Button</button>
         </div>
         </>
     )

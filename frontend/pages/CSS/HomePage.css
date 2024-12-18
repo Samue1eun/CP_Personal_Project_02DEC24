@@ -1,4 +1,10 @@
-.grid-container {
+.HomePageTitle {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+/* .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px;
@@ -42,4 +48,4 @@
         grid-column: 1;
         grid-row: auto;
     }
-}
+} */

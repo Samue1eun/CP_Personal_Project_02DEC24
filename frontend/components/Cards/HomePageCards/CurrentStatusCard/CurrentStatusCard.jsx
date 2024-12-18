@@ -59,7 +59,7 @@ const CurrentStatusCard = () => {
     return (
         <>
             <div className="currentstatuscard">
-            <h2>Current Thoughts</h2>
+            <h2 className="current-status-card-title">Current Thoughts</h2>
             <input
                 className="current-status-input"
                 type="text"
