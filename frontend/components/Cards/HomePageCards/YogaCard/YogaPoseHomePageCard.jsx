@@ -49,7 +49,7 @@ const YogaPoseHomePageCard = () => {
                 <h1 className="yoga-home-page-card-title">Pose of the Day</h1>
                 {yogaPose ? (
                     <div>
-                        <h2 className="yoga-pose-title">{yogaPose.english_name}</h2>
+                        <h2 className="yoga-pose-title"><strong>{yogaPose.english_name}</strong></h2>
                         <p className="yoga-pose-detail"><strong>Sanskrit Name:</strong> {yogaPose.sanskrit_name}</p>
                         <p className="yoga-pose-detail"><strong>Translation:</strong> {yogaPose.translation_name}</p>
                         <img className="yoga-pose-image" src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
