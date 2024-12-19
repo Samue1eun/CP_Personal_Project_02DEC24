@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import './YogaPoseofDayNavBar.css';
+import './MyProfileNavBar.css';
 
-const YogaPosesofDayNavBar = () => {
+const MyProfileNavBar = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+    
     const handleLogout = () => {
         localStorage.removeItem('access_token');
         localStorage.removeItem('refresh_token');
@@ -16,19 +17,19 @@ const YogaPosesofDayNavBar = () => {
 
     return (
         <>
-        {location.pathname === '/yoga-favorites' && (
-        <div className="yoga-pose-nav-bar-container">
+        {location.pathname === '/user-profile' && (
+        <div className="my-profile-nav-bar-container">
             <nav>
-                <button class="yoga-pose-nav-bar-button button-clear" onClick={() => navigate('/home')}>
+                <button class="my-profile-nav-bar-button button-clear" onClick={() => navigate('/home')}>
                     Home
                 </button> |
-                <button class="yoga-pose-nav-bar-button button-clear" onClick={() => navigate('/user-profile')}>
-                    My Profile
+                <button class="my-profile-nav-bar-button button-clear" onClick={() => navigate('/yoga-favorites')}>
+                    Yoga Pose of the Day
                 </button> |
-                <button class="yoga-pose-nav-bar-button button-clear" onClick={() => navigate('/crypto-favorites')}>
+                <button class="my-profile-nav-bar-button button-clear" onClick={() => navigate('/crypto-favorites')}>
                     My Favorited Cryptocurriences
                 </button> |
-                <button class="yoga-pose-nav-bar-button button-clear" onClick={handleLogout}>
+                <button class="my-profile-nav-bar-button button-clear" onClick={handleLogout}>
                     Logout
                 </button>
             </nav>
@@ -39,4 +40,4 @@ const YogaPosesofDayNavBar = () => {
     )
 }
 
-export default YogaPosesofDayNavBar;
+export default MyProfileNavBar;
