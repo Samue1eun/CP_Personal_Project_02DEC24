@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import MyProfileNavBar from "../components/NavBar/MyProfileNavBar/MyProfileNavBar.jsx";
 import UserPostList from '../components/UserPostList';
 import FavoriteCryptoCard from '../components/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
 
@@ -17,6 +18,7 @@ const UserProfile = () => {
 
     return (
         <>
+            <MyProfileNavBar />
             <nav>
                 <ul>
                     <li><button onClick={() => navigate('/home')}>Home</button></li>

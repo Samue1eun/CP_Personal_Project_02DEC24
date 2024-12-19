@@ -39,22 +39,22 @@ const FullYogaDescriptionCard = () => {
     };
 
     return (
-        <div className='fullYogaDescriptionCard'>
-            <h1 className='fullYogaDescriptionCardTitle'>Pose of the Day!</h1>
+        <div className='full-yoga-description-card'>
             {yogaPose ? (
                 <div>
-                    <h3 className='yogaPose'>{yogaPose.english_name}</h3>
-                    <p className='yogaPoseDescription'>Sanskrit Name: {yogaPose.sanskrit_name}</p>
-                    <p className='yogaPoseDescription'>Translation: {yogaPose.translation_name}</p>
-                    <p className='yogaPoseDescription'>Description: {yogaPose.pose_description}</p>
-                    <p className='yogaPoseDescription'>Benefits: {yogaPose.pose_benefits}</p>
-                    <img className='yogaPoseImage' src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
-                    <button onClick={handleAddToFavorites}>Add to Favorites</button>
+                    <h3 className='full-yoga-description-card-title'>{yogaPose.english_name}</h3>
+                    <p className='full-yoga-decription-details'><strong>Sanskrit Name:</strong> {yogaPose.sanskrit_name}</p>
+                    <p className='full-yoga-decription-details'><strong>Translation:</strong> {yogaPose.translation_name}</p>
+                    <p className='full-yoga-decription-details'><strong>Description:</strong> {yogaPose.pose_description}</p>
+                    <p className='full-yoga-decription-details'><strong>Benefits:</strong> {yogaPose.pose_benefits}</p>
+                    <img className='full-yoga-decription-image' src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
+                    {/* <button onClick={handleAddToFavorites}>Add to Favorites</button> */}
                 </div>
             ) : (
                 <p>Loading...</p>
             )}
         </div>
+
     );
 };
 

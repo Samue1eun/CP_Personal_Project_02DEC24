@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import YogaPosesofDayNavBar from '../components/NavBar/YogaPoseofDayNavBar/YogaPoseofDayNavBar.jsx';
 import FullYogaDescriptionCard from '../components/Cards/FavoriteYogaPosesCards/FullYogaDescriptionCard/FullYogaDescriptionCard.jsx';
-import FavoriteYogaPose from '../components/FavoriteYogaPoseComponents/FavoriteYogaPoseCard/FavoriteYogaPose.jsx';
+// import FavoriteYogaPose from '../components/FavoriteYogaPoseComponents/FavoriteYogaPoseCard/FavoriteYogaPose.jsx';
+import './CSS/YogaFavorites.css';
 
 const YogaFavorites = () => {
     const navigate = useNavigate();
@@ -17,9 +18,12 @@ const YogaFavorites = () => {
 
     return (
         <>
-        <YogaPosesofDayNavBar />
-            <h1>Yoga Pose of the Day</h1>
-            <FullYogaDescriptionCard />
+            <YogaPosesofDayNavBar />
+            <h1 class="yoga-pose-of-the-day-page-title">Yoga Pose of the Day</h1>
+            <div className="yoga-pose-of-the-day-page-content">
+                <FullYogaDescriptionCard />
+            </div>
+
 
         </>
     );
