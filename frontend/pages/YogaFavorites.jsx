@@ -19,7 +19,7 @@ const YogaFavorites = () => {
     return (
         <>
             <YogaPosesofDayNavBar />
-            <h1 class="yoga-pose-of-the-day-page-title">Yoga Pose of the Day</h1>
+            <h1 className="yoga-pose-of-the-day-page-title">Yoga Pose of the Day</h1>
             <div className="yoga-pose-of-the-day-page-content">
                 <FullYogaDescriptionCard />
             </div>

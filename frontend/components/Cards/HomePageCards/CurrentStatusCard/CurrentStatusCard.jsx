@@ -68,9 +68,9 @@ const CurrentStatusCard = () => {
                 onChange={(e) => setContent(e.target.value)}
             />
             <br />
-            <div className="button-container">
-                <button class="status-button button-outline" onClick={handlePost}>Submit</button>
-                <button class="status-button button-outline" onClick={() => setContent('')}>Clear</button>
+            <div className="current-status-card-button-container">
+                <button class="current-status-card-button button-outline" onClick={handlePost}>Submit</button>
+                <button class="current-status-card-button button-outline" onClick={() => setContent('')}>Clear</button>
             </div>
 
             </div>

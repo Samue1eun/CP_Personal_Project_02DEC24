@@ -1,7 +1,7 @@
 .full-yoga-description-card {
-    max-width: 500px; /* Set the maximum width */
-    width: 100%; /* Ensure it takes the full width of the parent */
-    height: auto; /* Adjust height automatically */
+    max-width: 500px;
+    width: 100%;
+    height: auto;
     padding: 35px;
     border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 20px;
@@ -30,8 +30,8 @@
 }
 
 .full-yoga-decription-image {
-    max-width: 100%; /* Ensure the image takes the full width of the parent */
-    height: 200px; /* Maintain the aspect ratio */
-    display: block; /* Remove any inline spacing */
-    margin: 0 auto; /* Center the image horizontally */
+    max-width: 100%;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
 }
