@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import MyFavoritedCryptocurrenciesNavBar from '../components/NavBar/YogaPoseofDayNavBar/YogaPoseofDayNavBar';
 
 const CryptoCurrencyFavorite = () => {
     const navigate = useNavigate();
@@ -14,6 +15,7 @@ const CryptoCurrencyFavorite = () => {
 
     return (
         <>
+        <MyFavoritedCryptocurrenciesNavBar />
          {location.pathname === '/crypto-favorites' && (
                 <nav>
                     <ul>
@@ -24,7 +26,7 @@ const CryptoCurrencyFavorite = () => {
                     </ul>
                 </nav>
          )}
-        <h1>My Crypto Watchlist</h1>
+        <h1>My Favorited Cryptocurriences</h1>
         </>
     )
 }

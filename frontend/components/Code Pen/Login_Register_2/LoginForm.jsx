@@ -52,7 +52,7 @@ const LogIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <div className="log-in-button-container">
-                <button class="register-button button-clear" onClick={() => navigate('/register')}>Register</button>
+                <button class="log-in-register-button button-clear" onClick={() => navigate('/register')}>Register</button>
                 <button type="submit" class="log-in-button button-outline">Log In</button>
             </div>
         </form>

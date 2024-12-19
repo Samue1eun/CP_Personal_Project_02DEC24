@@ -31,8 +31,9 @@ const Register = () => {
         <div className="register-container">
         <form className="register-form" onSubmit={handleSubmit}>
             <h3 className="register-title">Register</h3>
-            <label for="username">Username</label>
-            <input 
+            <label className="username-title" for="username">Username</label>
+            <input
+                className="register-username-input"
                 type="text" 
                 id="username" 
                 placeholder="Type in your username.." 
@@ -41,8 +42,9 @@ const Register = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
             />
-            <label for="email">Email</label>
-            <input 
+            <label className="email-title" for="email">Email</label>
+            <input
+                className="register-email-input"
                 type="email" 
                 id="email" 
                 name="email" 
@@ -52,8 +54,9 @@ const Register = () => {
                 value = {email}
                 onChange={(e) => setEmail(e.target.value)}
             />
-            <label for="password">Password</label>
-            <input 
+            <label className="password-title" for="password">Password</label>
+            <input
+                className="register-password-input"
                 type="password" 
                 id="password" 
                 name="password" 
@@ -63,8 +66,10 @@ const Register = () => {
                 value = {password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <a class="register" href="#" onClick={() => navigate('/login')}>Go Back to Log In</a>
-            <input type="submit" name="submit" value="Register" />
+            <div className="register-log-in-button-container">
+                <button class="go-back-to-login-button button-clear" onClick={() => navigate('/login')}>Register</button>
+                <button type="submit" class="register-button button-outline">Log In</button>
+            </div>
         </form>
         </div>
         </>
