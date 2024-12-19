@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import './UserPostList.css';
 
 const UserPostList = () => {
     const [posts, setPosts] = useState([]);
@@ -81,30 +82,40 @@ const UserPostList = () => {
     };
     return (
         <>
-            <h2>Your Posts</h2>
-            <ul>
-                {posts.map((post) => (
-                    <li key={post.id}>
-                        {editingPostId === post.id ? (
-                            <div>
-                                <textarea
-                                    value={newContent}
-                                    onChange={(e) => setNewContent(e.target.value)}
-                                />
-                                <button onClick={() => handleEditSubmit(post.id)}>Save</button>
-                                <button onClick={() => setEditingPostId(null)}>Cancel</button>
-                            </div>
-                        ) : (
-                            <div>
-                                {post.content}
-                                <br />
-                                <button onClick={() => deletePosts(post.id)}>Remove Post</button>
-                                <button onClick={() => editPosts(post.id, post.content)}>Edit Post</button>
-                            </div>
-                        )}
-                    </li>
-                ))}
-            </ul>
+
+            <div className="user-post-card-container">
+                <h2 className="user-post-title"><strong>Your Posts</strong></h2>
+                <ul className="user-post-unordered-list">
+                    {posts.map((post) => (
+                        <li key={post.id}>
+                            {editingPostId === post.id ? (
+                                <div>
+                                    <textarea
+                                        value={newContent}
+                                        onChange={(e) => setNewContent(e.target.value)}
+                                    />
+                                    <div>
+                                        <button class="button-outline" onClick={() => handleEditSubmit(post.id)}>Save</button>
+                                        <button class="button-clear" onClick={() => setEditingPostId(null)}>Cancel</button>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="user-post-block-quote">
+                                    <blockquote>
+                                        {post.content}
+                                    </blockquote>
+
+                                    <br />
+                                    <div>
+                                        <button class="button-outline" onClick={() => deletePosts(post.id)}>Remove Post</button>
+                                        <button class="button-clear" onClick={() => editPosts(post.id, post.content)}>Edit Post</button>
+                                    </div>
+                                </div>
+                            )}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </>
     )
 };
