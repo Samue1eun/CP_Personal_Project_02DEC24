@@ -45,15 +45,13 @@ const YogaPoseHomePageCard = () => {
     // Still need to add in the backend for adding yoga poses.
     return (
         <>
-            <div className="yogacard"> 
-                <h1>Pose of the Day</h1>
+            <div className="yoga-home-page-card"> 
+                <h1 className="yoga-home-page-card-title">Pose of the Day</h1>
                 {yogaPose ? (
                     <div>
-                        <h2>{yogaPose.english_name}</h2>
-                        <p><strong>Sanskrit Name:</strong> {yogaPose.sanskrit_name}</p>
-                        <p><strong>Translation:</strong> {yogaPose.translation_name}</p>
-                        {/* <p><strong>Description:</strong> {yogaPose.pose_description}</p>
-                        <p><strong>Benefits:</strong> {yogaPose.pose_benefits}</p> */}
+                        <h2 className="yoga-pose-title"><strong>{yogaPose.english_name}</strong></h2>
+                        <p className="yoga-pose-detail"><strong>Sanskrit Name:</strong> {yogaPose.sanskrit_name}</p>
+                        <p className="yoga-pose-detail"><strong>Translation:</strong> {yogaPose.translation_name}</p>
                         <img className="yoga-pose-image" src={yogaPose.url_svg_alt} alt={yogaPose.english_name} />
                         {/* <button className="add-to-favorites-button" onClick={handleAddToFavorites}>Add to Favorites</button> */}
                     </div>

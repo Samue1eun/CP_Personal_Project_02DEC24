@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import UserPostList from '../components/UserPostList';
-import FavoriteCryptoCard from '../components/Code Pen/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
+import FavoriteCryptoCard from '../components/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
 
 const UserProfile = () => {
     const navigate = useNavigate();

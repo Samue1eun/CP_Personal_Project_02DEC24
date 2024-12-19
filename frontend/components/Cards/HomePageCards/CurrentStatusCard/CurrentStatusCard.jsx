@@ -59,7 +59,7 @@ const CurrentStatusCard = () => {
     return (
         <>
             <div className="currentstatuscard">
-            <h2>Current Thoughts</h2>
+            <h2 className="current-status-card-title">Current Thoughts</h2>
             <input
                 className="current-status-input"
                 type="text"
@@ -69,8 +69,8 @@ const CurrentStatusCard = () => {
             />
             <br />
             <div className="button-container">
-                <button className="status-button" onClick={handlePost}>Submit</button>
-                <button className="status-button" onClick={() => setContent('')}>Clear</button>
+                <button class="status-button button-outline" onClick={handlePost}>Submit</button>
+                <button class="status-button button-outline" onClick={() => setContent('')}>Clear</button>
             </div>
 
             </div>

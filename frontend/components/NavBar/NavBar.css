@@ -1,119 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Gamja+Flower|Libre+Barcode+128+Text|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Noto+Serif+KR:200,300,400,500,600,700,900|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Poor+Story|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Righteous|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Source+Code+Pro:200,300,400,500,600,700,900|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|VT323&subset=cyrillic,cyrillic-ext,greek,greek-ext,korean,latin-ext,vietnamese');
-
-.iobtn {
-  background-color: #eeeeee;
-  border: none;
-  color: #ff0000;
-  border-left: 5px solid red;
-  padding: 5px 5px;
-  box-shadow: 0px 0px 0px black;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+.nav-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  gap: 20px;
 }
 
-
-.iobtn.material-blue {
-  background-color: #2196f3;
+.nav-bar-button {
+  font-size: 15px;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  padding: 0 1.5rem;
 }
-
-.material-raised {
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  margin: 0 8px;
-  border: none;
-  border-radius: 2px;
-  padding: 0 16px;
-  min-width: 64px;
-  height: 36px;
-  vertical-align: middle;
-  text-align: center;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  color: #fff;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  font-family: "Roboto", "Segoe UI", Arial, Helvectia, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 36px;
-  overflow: hidden;
-  outline: none;
-  cursor: pointer;
-  transition: box-shadow 0.2s;
-}
-
-.material-raised:hover,
-.material-raised:focus {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-
-.material-raised:active {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-}
-
-.material-raised:disabled {
-  color: rgba(0, 0, 0, 0.38);
-  background-color: rgba(0, 0, 0, 0.12);
-  box-shadow: none;
-  cursor: initial;
-}
-
-.material-raised::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: currentColor;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.material-raised:hover::before {
-  opacity: 0.12;
-}
-
-.material-raised:focus::before {
-  opacity: 0.2;
-}
-
-.material-raised:active::before {
-  opacity: 0.32;
-}
-
-.material-raised:disabled::before {
-  opacity: 0;
-}
-
-.material-raised::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 18px;
-  border-radius: 50%;
-  padding: 50%;
-  width: 32px;
-  height: 32px;
-  background-color: currentColor;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(1) ;
-  transition: opacity 1s, transform 0.5s;
-}
-
-.material-raised:active::after {
-  opacity: 0.4;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0s;
-}
-
-.material-raised:disabled::after {
-  opacity: 0;
-}
-
-.nav-bar-container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 10px 0;
-}
-

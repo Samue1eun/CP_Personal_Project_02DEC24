@@ -18,16 +18,16 @@ const NavBar = () => {
         {location.pathname === '/home' && (
         <div className="nav-bar-container">
             <nav>
-                <button onClick={() => navigate('/user-profile')} className="iobtn material-raised material-blue">
+                <button class="nav-bar-button button-clear" onClick={() => navigate('/user-profile')}>
                     My Profile
-                </button>
-                <button onClick={() => navigate('/yoga-favorites')} className="iobtn material-raised material-blue">
+                </button> |
+                <button class="nav-bar-button button-clear" onClick={() => navigate('/yoga-favorites')}>
                     Yoga Pose of the Day
-                </button>
-                <button onClick={() => navigate('/crypto-favorites')} className="iobtn material-raised material-blue">
+                </button> |
+                <button class="nav-bar-button button-clear" onClick={() => navigate('/crypto-favorites')}>
                     My Favorited Cryptocurrencies
-                </button>
-                <button onClick={handleLogout} className="iobtn material-raised material-blue">
+                </button> |
+                <button class="nav-bar-button button-clear" onClick={handleLogout}>
                     Logout
                 </button>
             </nav>

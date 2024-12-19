@@ -74,17 +74,33 @@ const TopTenCryptoCard = () => {
     
     return (
         <>
-        <div class="topTenCryptoCard">
-        <h2>Top 10 Cryptocurrencies</h2>
-        <ul>
-            {cryptos.map((crypto) => (
-            <li key={crypto.id}>
-            {crypto.rank}. {crypto.name} ({crypto.symbol}): ${crypto.price} {crypto.percent_change_24h}%
-            <br />
-            <button onClick={() => handleAddToFavorites(crypto.id)}>Add to Favorites</button>
-            </li>
-            ))}
-        </ul>
+        <div className="top-ten-crypto-card-container">
+            <h2 className="top-ten-crypto-card-title"><strong>Top 10 Cryptocurrencies</strong></h2>
+            <table className="top-ten-crypto-table">
+                <thead>
+                    <tr>
+                        <th className="top-ten-crypto-header-title">Rank</th>
+                        <th className="top-ten-crypto-header-title">Name</th>
+                        <th className="top-ten-crypto-header-title">Symbol</th>
+                        <th className="top-ten-crypto-header-title">Price</th>
+                        <th className="top-ten-crypto-header-title">Change (24h)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cryptos.map((crypto) => (
+                        <tr key={crypto.id} className="top-ten-crypto-rows">
+                        <td className="top-ten-crypto-row-description">{crypto.rank}</td>
+                        <td className="top-ten-crypto-row-description">{crypto.name}</td>
+                        <td className="top-ten-crypto-row-description">{crypto.symbol}</td>
+                        <td className="top-ten-crypto-row-description">${crypto.price}</td>
+                        <td className="top-ten-crypto-row-description">{crypto.percent_change_24h}%</td>
+                        <button class="crypto-add-to-favorites-button button-clear crypto-add-to-favorites-button" onClick={() => handleAddToFavorites(crypto.id)}>
+                            Add to Favorites
+                        </button>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
         </>
     )
