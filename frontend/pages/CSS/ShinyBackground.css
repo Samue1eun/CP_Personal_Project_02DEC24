@@ -1,0 +1,30 @@
+/* .shiny-background {
+    background-color: blueviolet;
+} */
+
+body {
+	background: linear-gradient(-45deg, #CDA6E5, #DEC4ED, #EEE1F6, #FFFFFF);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+
+/* .shiny-background {
+	background: linear-gradient(-45deg, #F2ABFD, #F7BEFC, #FBD0FA, white
+    );
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+} */
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
