@@ -9,6 +9,7 @@ import YogaPoseHomePageCard from '../components/Cards/HomePageCards/YogaCard/Yog
 import FavoriteCryptoCard from '../components/Cards/HomePageCards/FavoriteCryptoCard/FavoriteCryptoCard';
 import './CSS/HomePage.css';
 import 'milligram/dist/milligram.min.css';
+import './CSS/ShinyBackground.css';
 
 
 
@@ -87,7 +88,9 @@ const HomePage = () => {
 
     return (
         <>
+            <div className="shiny-background">
             <NavBar />
+
             <h1 className='HomePageTitle'>Home Page</h1>
             <div className='grid-container'>
                 <div className='grid-item current-status-card-grid-container'>
@@ -99,11 +102,11 @@ const HomePage = () => {
                 <div className='grid-item top-ten-crypto-card-grid-container'>
                     <TopTenCryptoCard />
                 </div>
-                <div className='grid-item favorite-crypto-card-grid-container'>
+                {/* <div className='grid-item favorite-crypto-card-grid-container'>
                     <FavoriteCryptoCard />
+                </div>   */}
                 </div>
             </div>
-
         </>
     );
 };
