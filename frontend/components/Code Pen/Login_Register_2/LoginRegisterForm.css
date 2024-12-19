@@ -1,4 +1,26 @@
+/* All Properties */
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire viewport */
+    z-index: -1; /* Place the video behind other content */
+}
+
+
+
 /* Log In Page */
+
+.log-in-page-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+}
 
 .log-in-container {
 	display: flex;
@@ -11,9 +33,10 @@
 }
 
 .log-in-title {
+	text-align: center;
 	font-size: 50px;
 	font-weight: 600;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 }
 
 .log-in-username-input {
@@ -51,27 +74,28 @@
 }
 
 .log-in-button {
-	font-size: .8rem;
-	height: 2.5rem;
+	font-size: 2rem;
+	height: 4rem;
 	line-height: 2.5rem;
-	padding: 0 1.5rem;
+	padding: 0 2rem;
 }
 
 .log-in-register-button {
-	font-size: .8rem;
-	height: 2.5rem;
+	font-size: 2rem;
+	height: 4rem;
 	line-height: 2.5rem;
-	padding: 0 1.5rem;
+	padding: 0 2rem;
 }
 
 /* Register Page */
-
-.register-button {
-	font-size: .8rem;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	padding: 0 1.5rem;
+.register-page-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
 }
+
 
 .register-container {
 	display: flex;
@@ -80,10 +104,10 @@
 	align-items: center;
 	max-height: 100%;
 	max-width: 100%;
-
 }
 
 .register-title {
+	text-align: center;
 	font-size: 50px;
 	font-weight: 600;
 	margin-bottom: 1rem;
@@ -113,10 +137,10 @@
 }
 
 .register-log-in-button {
-	font-size: .8rem;
-	height: 2.5rem;
+	font-size: 2rem;
+	height: 4rem;
 	line-height: 2.5rem;
-	padding: 0 1.5rem;
+	padding: 0 2rem;
 }
 
 .register-button {
@@ -151,15 +175,15 @@
 }
 
 .go-back-to-login-button {
-	font-size: .8rem;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	padding: 0 1.5rem;
+	font-size: 1.5rem;
+	height: 3.5rem;
+	line-height: 1rem;
+	padding: 0 1rem;
 }
 
 .register-button {
-	font-size: .8rem;
-	height: 2.5rem;
+	font-size: 2rem;
+	height: 3.5rem;
 	line-height: 2.5rem;
 	padding: 0 1.5rem;
 }
