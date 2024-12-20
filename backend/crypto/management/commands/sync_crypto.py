@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from users_and_crypto.utils import sync_crypto_data
+from crypto.utils import sync_crypto_data
 
 class Command(BaseCommand):
     help = 'Sync crypto data from external API'
